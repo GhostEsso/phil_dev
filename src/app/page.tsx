@@ -65,29 +65,63 @@ export default function Home() {
             <div className="group relative bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                 <Image
-                  src="/bookstore.png"
-                  alt="Bookstore CMS"
+                  src="/foody.png"
+                  alt="Foody"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                   sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 600px"
                 />
               </div>
               <div className="p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Space Travelers</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Foody</h3>
                 <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">
-                  Application web permettant aux utilisateurs de réserver des voyages spatiaux.
-                  Intégration avec l&apos;API SpaceX.
+                  Foody is a private web application that allows residents of the same building to share and sell their home-cooked meals. This platform promotes culinary sharing and creates social ties between neighbors.
                 </p>
                 <div className="flex gap-3">
                   <Link 
-                    href="https://github.com/GhostEsso/SpaceTravelersHub"
+                    href="https://github.com/GhostEsso/foodie"
                     target="_blank"
                     className="text-primary-developer hover:underline text-sm sm:text-base"
                   >
                     GitHub
                   </Link>
                   <Link 
-                    href="https://space-travelers-qg24.onrender.com"
+                    href="https://foodie-frontend.onrender.com/"
+                    target="_blank"
+                    className="text-primary-developer hover:underline text-sm sm:text-base"
+                  >
+                    Live Demo
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Ahoefa */}
+            <div className="group relative bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
+                <Image
+                  src="/ahoefa.png"
+                  alt="Ahoefa"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 600px"
+                />
+              </div>
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Ahoefa</h3>
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">
+                  A web application for booking and managing real estate properties.
+                </p>
+                <div className="flex gap-3">
+                  <Link 
+                    href="https://github.com/GhostEsso/ahoefa-frontend"
+                    target="_blank"
+                    className="text-primary-developer hover:underline text-sm sm:text-base"
+                  >
+                    GitHub
+                  </Link>
+                  <Link 
+                    href="https://ahoefa-frontend.onrender.com"
                     target="_blank"
                     className="text-primary-developer hover:underline text-sm sm:text-base"
                   >
@@ -97,6 +131,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+          
           <div className="mt-8 sm:mt-12 text-right">
             <Link 
               href="/projects"

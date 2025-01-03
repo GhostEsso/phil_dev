@@ -21,7 +21,7 @@ export default function Projects() {
           <div className="group relative bg-gray-100 dark:bg-gray-800/50 rounded-lg overflow-hidden">
             <div className="relative h-64 md:h-80">
               <Image
-                src="/projects/math.png"
+                src="/math.png"
                 alt="Math Magicians"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -30,14 +30,14 @@ export default function Projects() {
               <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                 <div className="flex gap-4">
                   <Link
-                    href="https://math-magicians-jjbt.onrender.com"
+                    href="https://math-magician-htg1.onrender.com/Calculator"
                     target="_blank"
                     className="bg-primary-developer text-white px-4 py-2 rounded-lg hover:bg-primary-developer/90 transition-colors"
                   >
                     Live Demo
                   </Link>
                   <Link
-                    href="https://github.com/GhostEsso/Math-Magicians"
+                    href="https://github.com/GhostEsso/Math-Magician"
                     target="_blank"
                     className="bg-white text-black px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
                   >
@@ -64,7 +64,7 @@ export default function Projects() {
           <div className="group relative bg-gray-100 dark:bg-gray-800/50 rounded-lg overflow-hidden">
             <div className="relative h-64 md:h-80">
               <Image
-                src="/projects/bookstore.png"
+                src="/bookstore.png"
                 alt="Bookstore React"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -73,7 +73,7 @@ export default function Projects() {
               <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                 <div className="flex gap-4">
                   <Link
-                    href="https://book-jjbt.onrender.com"
+                    href="https://book-jjbt.onrender.com/"
                     target="_blank"
                     className="bg-primary-developer text-white px-4 py-2 rounded-lg hover:bg-primary-developer/90 transition-colors"
                   >
@@ -107,7 +107,7 @@ export default function Projects() {
           <div className="group relative bg-gray-100 dark:bg-gray-800/50 rounded-lg overflow-hidden">
             <div className="relative h-64 md:h-80">
               <Image
-                src="/projects/space.png"
+                src="/space.png"
                 alt="Space Travelers"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -150,7 +150,7 @@ export default function Projects() {
           <div className="group relative bg-gray-100 dark:bg-gray-800/50 rounded-lg overflow-hidden">
             <div className="relative h-64 md:h-80">
               <Image
-                src="/projects/foodie.png"
+                src="/foody.png"
                 alt="Foodie"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
