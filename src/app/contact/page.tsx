@@ -31,6 +31,10 @@ export default function Contact() {
 
       const data = await response.json();
 
+      if (!response.ok) {
+        throw new Error(data.error || 'Une erreur est survenue lors de l\'envoi du message.');
+      }
+
       if (data.error) {
         throw new Error(data.error);
       }
