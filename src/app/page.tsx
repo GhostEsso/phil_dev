@@ -12,9 +12,9 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-24 sm:pt-32 md:pt-40 lg:pt-52 pb-8 sm:pb-12 md:pb-16 px-4">
+      <section className="pt-32 sm:pt-36 md:pt-44 lg:pt-52 pb-8 sm:pb-12 md:pb-16 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
-          <div className="flex flex-col space-y-2 sm:space-y-3">
+          <div className="flex flex-col space-y-1 sm:space-y-1">
             <HighlightedText 
               text="Developer."
               color="bg-primary-developer"
@@ -110,18 +110,18 @@ export default function Home() {
               <div className="p-4 sm:p-6">
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Ahoefa</h3>
                 <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">
-                  A web application for booking and managing real estate properties.
+                  A web application for booking and managing real estate properties. Built with Ruby on Rails..
                 </p>
                 <div className="flex gap-3">
                   <Link 
-                    href="https://github.com/GhostEsso/ahoefa-frontend"
+                    href="https://github.com/GhostEsso/ahoefa_rails"
                     target="_blank"
                     className="text-primary-developer hover:underline text-sm sm:text-base"
                   >
                     GitHub
                   </Link>
                   <Link 
-                    href="https://ahoefa-frontend.onrender.com"
+                    href="https://ahoefa.onrender.com"
                     target="_blank"
                     className="text-primary-developer hover:underline text-sm sm:text-base"
                   >

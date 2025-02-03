@@ -1,9 +1,60 @@
 "use client"
 
+import { useState } from 'react'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [status, setStatus] = useState({
+    loading: false,
+    error: '',
+    success: false
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus({ loading: true, error: '', success: false });
+
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.error) {
+        throw new Error(data.error);
+      }
+
+      setStatus({ loading: false, error: '', success: true });
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Erreur complète:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Une erreur est survenue lors de l\'envoi du message.';
+      setStatus({
+        loading: false,
+        error: errorMessage,
+        success: false
+      });
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
   return (
     <main className="min-h-screen bg-white dark:bg-[#0B1121] transition-colors duration-300">
       <Navbar />
@@ -48,7 +99,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-600 dark:text-gray-400">Email</p>
-                  <p className="text-lg font-medium text-gray-900 dark:text-white">lilip@gmail.com</p>
+                  <p className="text-lg font-medium text-gray-900 dark:text-white">lilipitaham@gmail.com</p>
                 </div>
               </div>
 
@@ -69,15 +120,18 @@ export default function Contact() {
           </div>
 
           {/* Form */}
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Your Name
+                Votre Nom
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
                 className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-developer focus:border-transparent transition-colors"
                 placeholder="John Doe"
               />
@@ -91,6 +145,9 @@ export default function Contact() {
                 type="email"
                 id="email"
                 name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
                 className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-developer focus:border-transparent transition-colors"
                 placeholder="john@example.com"
               />
@@ -103,17 +160,29 @@ export default function Contact() {
               <textarea
                 id="message"
                 name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
                 rows={6}
                 className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-developer focus:border-transparent transition-colors resize-none"
-                placeholder="Your message..."
+                placeholder="Votre message..."
               />
             </div>
 
+            {status.error && (
+              <p className="text-red-500">{status.error}</p>
+            )}
+
+            {status.success && (
+              <p className="text-green-500">Message envoyé avec succès !</p>
+            )}
+
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-primary-developer text-white font-medium rounded-lg hover:bg-primary-developer/90 transition-colors"
+              disabled={status.loading}
+              className="w-full px-6 py-3 bg-primary-developer text-white font-medium rounded-lg hover:bg-primary-developer/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Send Message
+              {status.loading ? 'Envoi en cours...' : 'Envoyer le Message'}
             </button>
           </form>
         </div>
