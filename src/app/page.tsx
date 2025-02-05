@@ -86,7 +86,7 @@ export default function Home() {
                     GitHub
                   </Link>
                   <Link 
-                    href="https://foodie-frontend.onrender.com/"
+                    href="https://foodie-rails.onrender.com"
                     target="_blank"
                     className="text-primary-developer hover:underline text-sm sm:text-base"
                   >
