@@ -76,6 +76,7 @@ export default function Home() {
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Foody</h3>
                 <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">
                   Foody is a private web application that allows residents of the same building to share and sell their home-cooked meals. This platform promotes culinary sharing and creates social ties between neighbors.
+                  Built with Ruby on Rails..
                 </p>
                 <div className="flex gap-3">
                   <Link 
@@ -110,7 +111,7 @@ export default function Home() {
               <div className="p-4 sm:p-6">
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Ahoefa</h3>
                 <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">
-                  A web application for booking and managing real estate properties. Built with Ruby on Rails..
+                  A web application for booking and managing real estate properties. <br /> Built with Ruby on Rails..
                 </p>
                 <div className="flex gap-3">
                   <Link 
