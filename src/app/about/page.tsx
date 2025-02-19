@@ -40,7 +40,7 @@ export default function About() {
                 <p className="text-gray-500 dark:text-gray-400">
                   For any inquiries or questions, send me an{" "}
                   <Link
-                    href="lilipitaham@gmail.com"
+                    href="/contact"
                     className="text-gray-900 dark:text-white underline hover:text-primary-developer"
                   >
                     email
