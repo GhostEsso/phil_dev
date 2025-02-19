@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ThemeSwitch } from './theme-switch'
-import { InstagramIcon, TwitterIcon, LinkedInIcon } from './social-icons'
+import { GitHubIcon, TwitterIcon, LinkedInIcon } from './social-icons'
 
 export function Navbar() {
   const pathname = usePathname()
@@ -21,9 +21,9 @@ export function Navbar() {
           </div>
           
           <div className="flex items-center gap-2 md:gap-4">
-            <Link href="https://instagram.com" target="_blank" className="text-gray-600 dark:text-gray-300 hover:text-primary-developer dark:hover:text-primary-developer transition-colors">
-              <InstagramIcon className="w-4 h-4 md:w-5 md:h-5" />
-              <span className="sr-only">Instagram</span>
+            <Link href="https://github.com/GhostEsso" target="_blank" className="text-gray-600 dark:text-gray-300 hover:text-primary-developer dark:hover:text-primary-developer transition-colors">
+              <GitHubIcon className="w-4 h-4 md:w-5 md:h-5" />
+              <span className="sr-only">GitHub</span>
             </Link>
             <Link href="https://x.com/TambanaEssohana" target="_blank" className="text-gray-600 dark:text-gray-300 hover:text-primary-developer dark:hover:text-primary-developer transition-colors">
               <TwitterIcon className="w-4 h-4 md:w-5 md:h-5" />
