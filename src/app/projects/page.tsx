@@ -60,12 +60,12 @@ export default function Projects() {
             </div>
           </div>
 
-          {/* Bookstore React */}
+          {/* Awesome Books */}
           <div className="group relative bg-gray-100 dark:bg-gray-800/50 rounded-lg overflow-hidden">
             <div className="relative h-64 md:h-80">
               <Image
-                src="/bookstore.png"
-                alt="Bookstore React"
+                src="/awesome.png"
+                alt="Awesome Books"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
@@ -73,14 +73,14 @@ export default function Projects() {
               <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                 <div className="flex gap-4">
                   <Link
-                    href="https://book-jjbt.onrender.com/"
+                    href="https://ghostesso.github.io/Awesome-Books/"
                     target="_blank"
                     className="bg-primary-developer text-white px-4 py-2 rounded-lg hover:bg-primary-developer/90 transition-colors"
                   >
                     Live Demo
                   </Link>
                   <Link
-                    href="https://github.com/GhostEsso/bookstore-react"
+                    href="https://github.com/GhostEsso/Awesome-Books"
                     target="_blank"
                     className="bg-white text-black px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
                   >
@@ -90,7 +90,7 @@ export default function Projects() {
               </div>
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Bookstore React</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Awesome Books</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
                 A modern bookstore application built with React and Redux. Users can add books, track reading progress, and manage their book collection.
                 Features a clean UI and seamless state management.
@@ -159,7 +159,7 @@ export default function Projects() {
               <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                 <div className="flex gap-4">
                   <Link
-                    href="https://github.com/GhostEsso/foodie"
+                    href="https://github.com/GhostEsso/foodie-rails"
                     target="_blank"
                     className="bg-white text-black px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
                   >
@@ -172,11 +172,46 @@ export default function Projects() {
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Foodie</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
                 A food sharing application that connects neighbors to share homemade meals. Features user authentication, real-time updates,
-                and a modern UI. Built with Next.js and Firebase.
+                and a modern UI. Built with Ruby On Rails and PostgreSQL.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="text-sm bg-primary-developer/10 text-primary-developer px-3 py-1 rounded-full">Next.js</span>
-                <span className="text-sm bg-primary-developer/10 text-primary-developer px-3 py-1 rounded-full">Firebase</span>
+                <span className="text-sm bg-primary-developer/10 text-primary-developer px-3 py-1 rounded-full">Ruby On Rails</span>
+                <span className="text-sm bg-primary-developer/10 text-primary-developer px-3 py-1 rounded-full">PostgreSQL</span>
+                <span className="text-sm bg-primary-developer/10 text-primary-developer px-3 py-1 rounded-full">Tailwind</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Ahoefa */}
+          <div className="group relative bg-gray-100 dark:bg-gray-800/50 rounded-lg overflow-hidden">
+            <div className="relative h-64 md:h-80">
+              <Image
+                src="/ahoefa.png"
+                alt="Ahoefa"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+              />
+              <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="flex gap-4">
+                  <Link
+                    href="https://github.com/GhostEsso/ahoefa_rails"
+                    target="_blank"
+                    className="bg-white text-black px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+                  >
+                    Source Code
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Ahoefa</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              A web application for booking and managing real estate properties with a modern UI and admin dashboard. Built with Ruby On Rails and PostgreSQL.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="text-sm bg-primary-developer/10 text-primary-developer px-3 py-1 rounded-full">Ruby On Rails</span>
+                <span className="text-sm bg-primary-developer/10 text-primary-developer px-3 py-1 rounded-full">PostgreSQL</span>
                 <span className="text-sm bg-primary-developer/10 text-primary-developer px-3 py-1 rounded-full">Tailwind</span>
               </div>
             </div>
