@@ -2,15 +2,18 @@
 
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export default function Experience() {
+  const { translations } = useLanguage();
+
   return (
     <main className="min-h-screen bg-white dark:bg-[#0B1121] transition-colors duration-300">
       <Navbar />
       <div className="pt-24 sm:pt-32 pb-16 max-w-7xl mx-auto px-4">
         {/* Main title */}
         <h1 className="text-5xl sm:text-8xl md:text-[12rem] font-bold text-gray-900/10 dark:text-white/10">
-          Experience
+          {translations.experience.title}
         </h1>
 
         {/* Timeline */}
@@ -37,11 +40,11 @@ export default function Experience() {
                   {/* Content */}
                   <div className="bg-gray-100 dark:bg-[#1a2333] rounded-lg p-6 sm:p-8">
                     <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                      Mobile Developer Intern
+                      {translations.experience.tpg.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-500 mb-4">TPG - Mobile App Development Agency</p>
+                    <p className="text-gray-600 dark:text-gray-500 mb-4">{translations.experience.tpg.company}</p>
                     <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm sm:text-base">
-                      Internship in mobile app development at TPG, an agency specialized in designing and developing innovative mobile applications. Active participation in mobile development projects and learning industry best practices.
+                      {translations.experience.tpg.description}
                     </p>
                   </div>
                 </div>
@@ -65,14 +68,11 @@ export default function Experience() {
                   {/* Content */}
                   <div className="bg-gray-100 dark:bg-[#1a2333] rounded-lg p-6 sm:p-8">
                     <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                      Full-Stack Software Developer
+                      {translations.experience.foodie.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-500 mb-4">foodie</p>
+                    <p className="text-gray-600 dark:text-gray-500 mb-4">{translations.experience.foodie.company}</p>
                     <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm sm:text-base">
-                      I am a full-stack developer currently working on the foodie
-                      project. It&apos;s a food sharing application that allows
-                      neighbors to share their meals and find dishes from their
-                      neighbors.
+                      {translations.experience.foodie.description}
                     </p>
                   </div>
                 </div>
@@ -96,18 +96,13 @@ export default function Experience() {
                   {/* Content */}
                   <div className="bg-gray-100 dark:bg-[#1a2333] rounded-lg p-6 sm:p-8">
                     <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                      Microverse Software Development Program
+                      {translations.experience.microverse.title}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-500 mb-4">
-                      Remote Full Stack Web Development Program
+                      {translations.experience.microverse.company}
                     </p>
                     <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm sm:text-base">
-                      Dedicated over 1300 hours to becoming proficient in
-                      algorithms, data structures, and full-stack development, will
-                      actively work on projects using Ruby, Rails, Javascript, React
-                      and Redux. Mastered remote pair-programming through GitHub,
-                      industry-standard gitflow, daily standups, fostering effective
-                      communication and collaboration with international developers.
+                      {translations.experience.microverse.description}
                     </p>
                   </div>
                 </div>

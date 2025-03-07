@@ -5,10 +5,12 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { ThemeSwitch } from './theme-switch'
 import { GitHubIcon, TwitterIcon, LinkedInIcon } from './social-icons'
+import { useLanguage } from '@/hooks/useLanguage'
 
 export function Navbar() {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { language, translations, toggleLanguage } = useLanguage()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -40,6 +42,12 @@ export function Navbar() {
               <span className="sr-only">LinkedIn</span>
             </Link>
             <div className="w-px h-4 bg-gray-300 dark:bg-gray-700" />
+            <button
+              onClick={toggleLanguage}
+              className="text-gray-600 dark:text-gray-300 hover:text-primary-developer dark:hover:text-primary-developer transition-colors text-sm font-medium"
+            >
+              {language === 'en' ? 'FR' : 'EN'}
+            </button>
             <ThemeSwitch />
             {/* Menu button for mobile */}
             <button
@@ -74,7 +82,7 @@ export function Navbar() {
               pathname === '/about' ? 'text-primary-developer dark:text-primary-developer' : ''
             }`}
           >
-            About
+            {translations.nav.about}
           </Link>
           <Link 
             href="/projects"
@@ -82,7 +90,7 @@ export function Navbar() {
               pathname === '/projects' ? 'text-primary-developer dark:text-primary-developer' : ''
             }`}
           >
-            Projects
+            {translations.nav.projects}
           </Link>
           <Link 
             href="/experience"
@@ -90,7 +98,7 @@ export function Navbar() {
               pathname === '/experience' ? 'text-primary-developer dark:text-primary-developer' : ''
             }`}
           >
-            Experience
+            {translations.nav.experience}
           </Link>
           <Link 
             href="/contact"
@@ -98,7 +106,7 @@ export function Navbar() {
               pathname === '/contact' ? 'text-primary-developer dark:text-primary-developer' : ''
             }`}
           >
-            Contact
+            {translations.nav.contact}
           </Link>
         </div>
 
@@ -113,7 +121,7 @@ export function Navbar() {
                   pathname === '/about' ? 'text-primary-developer dark:text-primary-developer' : ''
                 }`}
               >
-                About
+                {translations.nav.about}
               </Link>
               <Link 
                 href="/projects"
@@ -122,7 +130,7 @@ export function Navbar() {
                   pathname === '/projects' ? 'text-primary-developer dark:text-primary-developer' : ''
                 }`}
               >
-                Projects
+                {translations.nav.projects}
               </Link>
               <Link 
                 href="/experience"
@@ -131,7 +139,7 @@ export function Navbar() {
                   pathname === '/experience' ? 'text-primary-developer dark:text-primary-developer' : ''
                 }`}
               >
-                Experience
+                {translations.nav.experience}
               </Link>
               <Link 
                 href="/contact"
@@ -140,7 +148,7 @@ export function Navbar() {
                   pathname === '/contact' ? 'text-primary-developer dark:text-primary-developer' : ''
                 }`}
               >
-                Contact
+                {translations.nav.contact}
               </Link>
             </div>
           </div>
