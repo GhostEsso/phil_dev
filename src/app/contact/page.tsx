@@ -3,8 +3,10 @@
 import { useState } from 'react'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
+import { useLanguage } from "@/hooks/useLanguage"
 
 export default function Contact() {
+  const { translations } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,10 +17,13 @@ export default function Contact() {
     error: '',
     success: false
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus({ loading: true, error: '', success: false });
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
 
     try {
       const response = await fetch('/api/send', {
@@ -39,16 +44,14 @@ export default function Contact() {
         throw new Error(data.error);
       }
 
-      setStatus({ loading: false, error: '', success: true });
+      setSubmitStatus('success');
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       console.error('Erreur complète:', error);
       const errorMessage = error instanceof Error ? error.message : 'Une erreur est survenue lors de l\'envoi du message.';
-      setStatus({
-        loading: false,
-        error: errorMessage,
-        success: false
-      });
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -65,7 +68,7 @@ export default function Contact() {
       <div className="pt-32 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main title */}
         <h1 className="text-6xl sm:text-8xl lg:text-[12rem] font-bold text-gray-900/10 dark:text-white/10 mb-16 sm:mb-24">
-          Contact
+          {translations.contact.title}
         </h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
@@ -73,10 +76,10 @@ export default function Contact() {
           <div className="space-y-8">
             <div>
               <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                Get in touch, let&apos;s talk.
+                {translations.contact.subtitle}
               </h2>
               <p className="text-gray-600 dark:text-gray-400 text-lg">
-                Fill in the details and I&apos;ll get back to you as soon as I can.
+                {translations.contact.description}
               </p>
             </div>
 
@@ -127,7 +130,7 @@ export default function Contact() {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Votre Nom
+                {translations.contact.form.name}
               </label>
               <input
                 type="text"
@@ -143,7 +146,7 @@ export default function Contact() {
 
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Email
+                {translations.contact.form.email}
               </label>
               <input
                 type="email"
@@ -159,7 +162,7 @@ export default function Contact() {
 
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Message
+                {translations.contact.form.message}
               </label>
               <textarea
                 id="message"
@@ -173,20 +176,20 @@ export default function Contact() {
               />
             </div>
 
-            {status.error && (
-              <p className="text-red-500">{status.error}</p>
+            {submitStatus === 'success' && (
+              <p className="text-green-500">{translations.contact.form.success}</p>
             )}
 
-            {status.success && (
-              <p className="text-green-500">Message envoyé avec succès !</p>
+            {submitStatus === 'error' && (
+              <p className="text-red-500">{translations.contact.form.error}</p>
             )}
 
             <button
               type="submit"
-              disabled={status.loading}
+              disabled={isSubmitting}
               className="w-full px-6 py-3 bg-primary-developer text-white font-medium rounded-lg hover:bg-primary-developer/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {status.loading ? 'Envoi en cours...' : 'Envoyer le Message'}
+              {isSubmitting ? translations.contact.form.sending : translations.contact.form.send}
             </button>
           </form>
         </div>

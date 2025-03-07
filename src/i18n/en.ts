@@ -1,4 +1,87 @@
 export const en = {
+  home: {
+    roles: {
+      developer: "Developer,",
+      human: "Human,",
+      programmer: "Programmer,",
+      visionary: "Visionary."
+    },
+    projects: {
+      title: "Favourite\nProjects",
+      viewAll: "View all projects",
+      foodie: {
+        title: "Foodie",
+        description: "Foody is a private web application that allows residents of the same building to share and sell their home-cooked meals. This platform promotes culinary sharing and creates social ties between neighbors. Built with Ruby on Rails."
+      },
+      ahoefa: {
+        title: "Ahoefa",
+        description: "A web application for booking and managing real estate properties. Built with Ruby on Rails."
+      }
+    },
+    latestCode: {
+      title: "Latest\nCode",
+      viewGitHub: "View GitHub",
+      foodie: {
+        title: "foodie",
+        description: "Foody is a private web application that allows residents of the same building to share and sell their home-cooked meals. This platform promotes culinary sharing and creates social ties between neighbors."
+      },
+      ahoefa: {
+        title: "Ahoefa",
+        description: "A real estate web application built with Nextjs and Tailwind CSS."
+      },
+      ecommerce: {
+        title: "Ecommerce store",
+        description: "Ecommerce store built with NextJs, Redux, and Tailwind CSS."
+      }
+    }
+  },
+  about: {
+    title: 'About Me',
+    subtitle: 'Full-Stack Developer | Development, Design & Architecture.',
+    description: 'Problem Solver, Big & Small. Building breathtaking React applications.',
+    currentProject: 'Currently working on',
+    projectName: 'Foodie, a food sharing app between neighbors',
+    contact: {
+      title: 'Contact',
+      description: 'For any inquiries or questions, send me an'
+    },
+    opportunities: {
+      title: 'Opportunities',
+      description: 'I\'m currently looking for new opportunities. If you think I might be a good fit, check out my resume and get in touch.',
+      downloadResume: 'Download my Resume'
+    },
+    social: {
+      title: 'Social Links'
+    },
+    techStack: {
+      title: 'Tech Stack'
+    },
+    bio: 'A Full Stack developer with over 2 years of experience in web, mobile and hybrid application development using React, Node.js and Ruby on Rails. I have experience in designing backend architectures. I use the main Frontend development technologies like Next.js, React (with Redux), TypeScript and JavaScript (ES6), creating SPAs that work with APIs and follow best practices. Confident in writing unit tests with the Jest framework. Good understanding of Agile methodology and ability to collaborate effectively in a team.'
+  },
+  projects: {
+    title: 'Projects',
+    subtitle: 'A selection of my recent projects',
+    viewProject: 'View Project',
+    viewCode: 'View Code',
+    categories: {
+      all: 'All',
+      web: 'Web',
+      mobile: 'Mobile',
+      design: 'Design'
+    },
+    items: {
+      foodie: {
+        title: 'Foodie',
+        description: 'A food sharing application that allows neighbors to share their meals and find dishes from their neighbors.',
+        tech: ['React', 'Node.js', 'MongoDB', 'Express']
+      },
+      portfolio: {
+        title: 'Personal Portfolio',
+        description: 'My personal portfolio built with Next.js and TailwindCSS. It showcases my projects and experience.',
+        tech: ['Next.js', 'React', 'TailwindCSS', 'TypeScript']
+      }
+    }
+  },
   experience: {
     title: 'Experience',
     tpg: {

@@ -4,28 +4,31 @@ import Link from "next/link";
 import Image from "next/image";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export default function About() {
+  const { translations } = useLanguage();
+
   return (
     <main className="min-h-screen bg-white dark:bg-[#0B1121] transition-colors duration-300">
       <Navbar />
       <div className="pt-32 pb-16 max-w-7xl mx-auto px-8 md:px-16">
         <div className="space-y-16">
           {/* Main title */}
-          <h1 className="text-8xl md:text-[10rem] font-bold text-gray-900/10 dark:text-white/10">
-            About Me.
+          <h1 className="text-5xl sm:text-7xl md:text-[10rem] font-bold text-gray-900/10 dark:text-white/10">
+            {translations.about.title}
           </h1>
 
           {/* Header */}
           <div className="space-y-8">
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white">
-              Full-Stack Developer | Development, Design & Architecture.
+              {translations.about.subtitle}
               <br />
-              Problem Solver, Big & Small. Building breathtaking React
+              {translations.about.description}
               <br />
-              applications. Currently working on{" "}
+              {translations.about.currentProject}{" "}
               <span className="inline-flex items-center bg-red-500 text-white px-4 py-2 rounded-lg">
-                Foodie, a food sharing app between neighbors
+                {translations.about.projectName}
               </span>
             </h2>
           </div>
@@ -35,34 +38,32 @@ export default function About() {
             <div className="space-y-8">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                  Contact
+                  {translations.about.contact.title}
                 </h2>
                 <p className="text-gray-500 dark:text-gray-400">
-                  For any inquiries or questions, send me an{" "}
+                  {translations.about.contact.description}{" "}
                   <Link
                     href="/contact"
                     className="text-gray-900 dark:text-white underline hover:text-primary-developer"
                   >
                     email
-                  </Link>{" "}
-                  and I&apos;ll get back to you quickly.
+                  </Link>
                 </p>
               </div>
 
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                  Opportunities
+                  {translations.about.opportunities.title}
                 </h2>
                 <p className="text-gray-500 dark:text-gray-400">
-                  I&apos;m currently looking for new opportunities.
-                  If you think I might be a good fit, check out my resume and get in touch.
+                  {translations.about.opportunities.description}
                   <br />
                   <Link
                     href="/Essohanam_Tambana_Resume.pdf"
                     target="_blank"
                     className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors mt-8 w-fit"
                   >
-                    <span>Download my Resume</span>
+                    <span>{translations.about.opportunities.downloadResume}</span>
                     <svg
                       width="15"
                       height="15"
@@ -83,7 +84,7 @@ export default function About() {
 
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                  Social Links
+                  {translations.about.social.title}
                 </h2>
                 <ul className="space-y-2 text-gray-400">
                   <li>
@@ -119,7 +120,7 @@ export default function About() {
 
             <div>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Tech Stack
+                {translations.about.techStack.title}
               </h2>
               <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
                 <Image
@@ -172,16 +173,7 @@ export default function About() {
 
               <div className="mt-8">
                 <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed">
-                  A Full Stack developer with over 2 years of experience
-                  in web, mobile and hybrid application development using
-                  React, Node.js and Ruby on Rails.
-                  I have experience in designing backend architectures.
-                  I use the main Frontend development technologies like Next.js,
-                  React (with Redux), TypeScript and JavaScript (ES6),
-                  creating SPAs that work with APIs and follow best practices.
-                  Confident in writing unit tests with the Jest framework.
-                  Good understanding of Agile methodology and ability to
-                  collaborate effectively in a team.
+                  {translations.about.bio}
                 </p>
               </div>
             </div>

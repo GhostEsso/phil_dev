@@ -11,10 +11,10 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          developer: "#FFB347",
-          human: "#7FD858",
-          programmer: "#00E5BE",
-          visionary: "#4B9EF4",
+          developer: "#FFD700",
+          human: "#4169E1",
+          programmer: "#FF0000",
+          visionary: "#008000",
         }
       },
     },

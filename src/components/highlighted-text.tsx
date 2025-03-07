@@ -10,30 +10,25 @@ interface HighlightedTextProps {
 
 export function HighlightedText({ text, color, delay }: HighlightedTextProps) {
   return (
-    <div className="mb-6">
-      <motion.div
-        className={`${color} inline-block`}
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{
-          duration: 0.8,
-          delay,
-          ease: "easeOut"
-        }}
-        style={{ transformOrigin: "left" }}
+    <div className="relative inline-block">
+      <motion.span
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: delay }}
+        className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white block"
       >
-        <motion.span
-          className="font-bold text-6xl md:text-8xl text-white px-4 py-1 block"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 0.5,
-            delay: delay + 0.4
-          }}
-        >
-          {text}
-        </motion.span>
-      </motion.div>
+        {text}
+      </motion.span>
+      <motion.div
+        initial={{ width: 0 }}
+        animate={{ width: "100%" }}
+        transition={{ 
+          duration: 1.5,
+          delay: delay + 0.8,
+          ease: "easeInOut"
+        }}
+        className={`absolute bottom-0 left-0 h-[30%] ${color} opacity-30 -z-10`}
+      />
     </div>
   )
 } 
