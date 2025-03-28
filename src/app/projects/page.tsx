@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react";
 import Image from 'next/image';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
@@ -8,14 +7,6 @@ import { useLanguage } from "@/hooks/useLanguage";
 
 export default function Projects() {
   const { translations } = useLanguage();
-  const [selectedCategory, setSelectedCategory] = useState('all');
-
-  const categories = [
-    { id: 'all', label: translations.projects.categories.all },
-    { id: 'web', label: translations.projects.categories.web },
-    { id: 'mobile', label: translations.projects.categories.mobile },
-    { id: 'design', label: translations.projects.categories.design },
-  ];
 
   const projects = [
     {
@@ -57,6 +48,15 @@ export default function Projects() {
       tech: ['Next.js', 'React', 'Ruby on Rails'],
       github: "https://github.com/GhostEsso/ahoefa-frontend",
       demo: "https://ahoefa.onrender.com/"
+    },
+    {
+      title: "Ventou Store",
+      description: "Une plateforme e-commerce complète avec un panneau d'administration permettant de gérer les produits, les catégories et les commandes. Construite avec Next.js, Prisma et Tailwind CSS.",
+      image: "/ventou.png",
+      tech: ['Next.js', 'Prisma', 'Tailwind CSS', 'TypeScript'],
+      github: "https://github.com/GhostEsso/ecommerce-store",
+      demo: "https://ecommerce-store-five-kohl.vercel.app/",
+      admin: "https://ecommerce-admin-six-beige.vercel.app/sign-in"
     }
   ];
 
@@ -75,23 +75,6 @@ export default function Projects() {
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white">
               {translations.projects.subtitle}
             </h2>
-          </div>
-
-          {/* Categories */}
-          <div className="flex gap-4 flex-wrap">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
-                  selectedCategory === category.id
-                    ? 'bg-primary-developer text-white'
-                    : 'bg-gray-100 dark:bg-[#1a2333] text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-[#2a3343]'
-                }`}
-              >
-                {category.label}
-              </button>
-            ))}
           </div>
 
           {/* Projects Grid */}
@@ -167,6 +150,35 @@ export default function Projects() {
                         />
                       </svg>
                     </a>
+                    {project.admin && (
+                      <a
+                        href={project.admin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-primary-developer hover:text-primary-developer/80 transition-colors"
+                      >
+                        Admin Panel
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                          />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                          />
+                        </svg>
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
