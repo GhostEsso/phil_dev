@@ -23,10 +23,38 @@ export default function Experience() {
 
           {/* Timeline Items Container */}
           <div className="relative space-y-12 sm:space-y-32">
+            {/* Kaba Delivery */}
+            <div>
+              <div className="text-2xl sm:text-4xl text-gray-400 dark:text-gray-500 mb-8 sm:text-center pl-6 sm:pl-0">
+                2025 - Present
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-start">
+                <div className="hidden sm:block sm:w-1/2" />
+                <div className="relative pl-6 sm:pl-16 sm:w-1/2">
+                  {/* Timeline point with pulse animation */}
+                  <div className="absolute left-[-4px] sm:left-0 top-8 transform sm:-translate-x-1/2">
+                    <div className="w-3 h-3 bg-primary-developer rounded-full relative z-10" />
+                    <div className="absolute top-0 left-0 w-3 h-3 bg-primary-developer rounded-full animate-ping opacity-75" />
+                    <div className="absolute top-0 left-0 w-3 h-3 bg-primary-developer rounded-full animate-pulse opacity-75" />
+                  </div>
+                  {/* Content */}
+                  <div className="bg-gray-100 dark:bg-[#1a2333] rounded-lg p-6 sm:p-8">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      Développeur Backend
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-500 mb-4">Kaba Delivery SARL</p>
+                    <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm sm:text-base">
+                      Développement et maintenance des services backend pour la plateforme de livraison Kaba Delivery. Conception et implémentation d'APIs robustes, gestion de bases de données, et optimisation des performances du système.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* TPG Stage */}
             <div>
               <div className="text-2xl sm:text-4xl text-gray-400 dark:text-gray-500 mb-8 sm:text-center pl-6 sm:pl-0">
-                2024 - Present
+                2024 - 2025
               </div>
               <div className="flex flex-col sm:flex-row sm:items-start">
                 <div className="hidden sm:block sm:w-1/2" />

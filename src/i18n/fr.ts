@@ -83,11 +83,16 @@ export const fr = {
     }
   },
   experience: {
-    title: 'Expérience',
+    title: 'Expériences',
+    kaba: {
+      title: 'Développeur Backend',
+      company: 'Kaba Delivery SARL',
+      description: 'Développement et maintenance des services backend pour la plateforme de livraison Kaba Delivery. Conception et implémentation d\'APIs robustes, gestion de bases de données, et optimisation des performances du système.'
+    },
     tpg: {
-      title: 'Développeur Mobile en Stage',
+      title: 'Développeur Mobile',
       company: 'TPG - Agence de développement d\'applications mobiles',
-      description: 'Stage en développement d\'applications mobiles chez TPG, une agence spécialisée dans la conception et le développement d\'applications mobiles innovantes. Participation active aux projets de développement mobile et apprentissage des meilleures pratiques du secteur.'
+      description: 'Développement d\'applications mobiles chez TPG, une agence spécialisée dans la conception et le développement d\'applications mobiles innovantes. Participation active aux projets de développement mobile et apprentissage des meilleures pratiques du secteur.'
     },
     foodie: {
       title: 'Développeur Full-Stack',
@@ -103,7 +108,7 @@ export const fr = {
   nav: {
     about: 'À propos',
     projects: 'Projets',
-    experience: 'Expérience',
+    experience: 'Expériences',
     contact: 'Contact'
   },
   contact: {

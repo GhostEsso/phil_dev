@@ -84,10 +84,15 @@ export const en = {
   },
   experience: {
     title: 'Experience',
+    kaba: {
+      title: 'Backend Developer',
+      company: 'Kaba Delivery SARL',
+      description: 'Development and maintenance of backend services for the Kaba Delivery platform. Design and implementation of robust APIs, database management, and system performance optimization.'
+    },
     tpg: {
       title: 'Mobile Developer Intern',
       company: 'TPG - Mobile App Development Agency',
-      description: 'Internship in mobile app development at TPG, an agency specialized in designing and developing innovative mobile applications. Active participation in mobile development projects and learning industry best practices.'
+      description: 'Internship in mobile application development at TPG, an agency specialized in designing and developing innovative mobile applications. Active participation in mobile development projects and learning industry best practices.'
     },
     foodie: {
       title: 'Full-Stack Software Developer',
