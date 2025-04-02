@@ -36,14 +36,45 @@ export const en = {
     }
   },
   about: {
-    title: 'About Me',
-    subtitle: 'Full-Stack Developer | Development, Design & Architecture.',
-    description: 'Problem Solver, Big & Small. Building breathtaking React applications.',
+    title: 'About',
+    subtitle: 'Full Stack Developer',
+    description: 'I am a passionate developer...',
     currentProject: 'Currently working on',
-    projectName: 'Foodie, a food sharing app between neighbors',
+    projectName: 'Foodie',
+    skills: {
+      title: 'Skills',
+      technical: {
+        title: 'Technical',
+        items: [
+          'JavaScript/TypeScript',
+          'React/Next.js',
+          'Node.js/NestJS',
+          'Ruby on Rails',
+          'PostgreSQL/MongoDB',
+          'OVH/Vercel/Render',
+          'Git/GitHub',
+          'Docker',
+          'REST API',
+          'TailwindCSS'
+        ]
+      },
+      soft: {
+        title: 'Soft Skills',
+        items: [
+          'Effective Communication',
+          'Remote Collaboration',
+          'Agile Project Management',
+          'Problem Solving',
+          'Mentoring',
+          'Teamwork',
+          'Adaptability',
+          'Organization'
+        ]
+      }
+    },
     contact: {
       title: 'Contact',
-      description: 'For any inquiries or questions, send me an'
+      description: 'Send me an email'
     },
     opportunities: {
       title: 'Opportunities',
@@ -60,7 +91,15 @@ export const en = {
   },
   projects: {
     title: 'Projects',
-    subtitle: 'A selection of my recent projects',
+    subtitle: 'My latest projects',
+    foodie: {
+      title: 'Foodie',
+      description: 'A meal sharing web application'
+    },
+    ahoefa: {
+      title: 'Ahoefa',
+      description: 'A real estate web application'
+    },
     viewProject: 'View Project',
     viewCode: 'View Code',
     categories: {

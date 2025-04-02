@@ -37,13 +37,44 @@ export const fr = {
   },
   about: {
     title: 'À propos',
-    subtitle: 'Développeur Full-Stack | Développement, Design & Architecture.',
-    description: 'Résolveur de problèmes, grands & petits. Création d\'applications React époustouflantes.',
-    currentProject: 'Actuellement en train de travailler sur',
-    projectName: 'Foodie, une application de partage de repas entre voisins',
+    subtitle: 'Développeur Full Stack',
+    description: 'Je suis un développeur passionné...',
+    currentProject: 'Je travaille actuellement sur',
+    projectName: 'Foodie',
+    skills: {
+      title: 'Compétences',
+      technical: {
+        title: 'Techniques',
+        items: [
+          'JavaScript/TypeScript',
+          'React/Next.js',
+          'Node.js/NestJS',
+          'Ruby on Rails',
+          'PostgreSQL/MongoDB',
+          'OVH/Vercel/Render',
+          'Git/GitHub',
+          'Docker',
+          'REST API',
+          'TailwindCSS'
+        ]
+      },
+      soft: {
+        title: 'Non Techniques',
+        items: [
+          'Communication efficace',
+          'Collaboration à distance',
+          'Gestion de projet Agile',
+          'Résolution de problèmes',
+          'Mentorat',
+          'Travail en équipe',
+          'Adaptabilité',
+          'Organisation'
+        ]
+      }
+    },
     contact: {
       title: 'Contact',
-      description: 'Pour toute demande ou question, envoyez-moi un'
+      description: 'Envoyez-moi un email'
     },
     opportunities: {
       title: 'Opportunités',
@@ -60,7 +91,15 @@ export const fr = {
   },
   projects: {
     title: 'Projets',
-    subtitle: 'Une sélection de mes projets récents',
+    subtitle: 'Mes derniers projets',
+    foodie: {
+      title: 'Foodie',
+      description: 'Une application web de partage de repas'
+    },
+    ahoefa: {
+      title: 'Ahoefa',
+      description: 'Une application web immobilière'
+    },
     viewProject: 'Voir le projet',
     viewCode: 'Voir le code',
     categories: {
@@ -70,11 +109,6 @@ export const fr = {
       design: 'Design'
     },
     items: {
-      foodie: {
-        title: 'Foodie',
-        description: 'Une application de partage de repas entre voisins. Les utilisateurs peuvent partager leurs repas et trouver des plats chez leurs voisins.',
-        tech: ['React', 'Node.js', 'MongoDB', 'Express']
-      },
       portfolio: {
         title: 'Portfolio Personnel',
         description: 'Mon portfolio personnel construit avec Next.js et TailwindCSS. Il présente mes projets et mon expérience.',
@@ -97,7 +131,7 @@ export const fr = {
     foodie: {
       title: 'Développeur Full-Stack',
       company: 'foodie',
-      description: 'Je suis un développeur full-stack travaillant actuellement sur le projet foodie. C\'est une application de partage de repas qui permet aux voisins de partager leurs repas et de trouver des plats chez leurs voisins.'
+      description: 'Développeur full-stack ayant travaillé sur le projet foodie. C\'est une application de partage de repas qui permet aux voisins de partager leurs repas et de trouver des plats chez leurs voisins.'
     },
     microverse: {
       title: 'Programme de Développement Logiciel Microverse',
