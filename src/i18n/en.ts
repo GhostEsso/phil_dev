@@ -124,7 +124,7 @@ export const en = {
   experience: {
     title: 'Experience',
     kaba: {
-      title: 'Backend Developer',
+      title: 'Full Stack Developer',
       company: 'Kaba Delivery SARL',
       description: 'Development and maintenance of backend services for the Kaba Delivery platform. Design and implementation of robust APIs, database management, and system performance optimization.'
     },

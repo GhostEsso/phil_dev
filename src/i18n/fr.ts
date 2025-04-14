@@ -119,7 +119,7 @@ export const fr = {
   experience: {
     title: 'Expériences',
     kaba: {
-      title: 'Développeur Backend',
+      title: 'Développeur Full Stack',
       company: 'Kaba Delivery SARL',
       description: 'Développement et maintenance des services backend pour la plateforme de livraison Kaba Delivery. Conception et implémentation d\'APIs robustes, gestion de bases de données, et optimisation des performances du système.'
     },

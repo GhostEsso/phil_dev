@@ -44,7 +44,7 @@ export default function Experience() {
                     {/* Content */}
                     <div className="bg-gray-100 dark:bg-[#1a2333] rounded-lg p-6 sm:p-8">
                       <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                        Développeur Backend
+                        Développeur Full Stack
                       </h3>
                       <p className="text-gray-600 dark:text-gray-500 mb-4">Kaba Delivery SARL</p>
                       <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm sm:text-base">
