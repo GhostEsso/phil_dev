@@ -9,7 +9,7 @@ export default function Experience() {
   const { translations } = useLanguage();
 
   return (
-    <main className="min-h-screen bg-white dark:bg-[#0B1121] transition-colors duration-300">
+    <main className="min-h-screen bg-white dark:bg-[#0B1121] transition-colors duration-300 overflow-x-hidden">
       <Navbar />
       <div className="pt-24 sm:pt-32 pb-16 max-w-7xl mx-auto px-4">
         {/* Main title */}
@@ -59,7 +59,7 @@ export default function Experience() {
             {/* TPG Stage */}
             <ScrollAnimation delay={0.4}>
               <div>
-                <div className="text-2xl sm:text-4xl text-gray-400 dark:text-gray-500 mb-8 sm:text-center pl-6 sm:pl-0 whitespace-nowrap">
+                <div className="text-2xl sm:text-4xl text-gray-400 dark:text-gray-500 mb-8 sm:text-center pl-6 sm:pl-0 break-words">
                   December 2024 - March 2025
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-start">
@@ -89,7 +89,7 @@ export default function Experience() {
             {/* Foodie */}
             <ScrollAnimation delay={0.6}>
               <div>
-                <div className="text-2xl sm:text-4xl text-gray-400 dark:text-gray-500 mb-8 sm:text-center pl-6 sm:pl-0 whitespace-nowrap">
+                <div className="text-2xl sm:text-4xl text-gray-400 dark:text-gray-500 mb-8 sm:text-center pl-6 sm:pl-0 break-words">
                   December 2023 - November 2024
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-start">
@@ -119,7 +119,7 @@ export default function Experience() {
             {/* Microverse */}
             <ScrollAnimation delay={0.8}>
               <div>
-                <div className="text-2xl sm:text-4xl text-gray-400 dark:text-gray-500 mb-8 sm:text-center pl-6 sm:pl-0 whitespace-nowrap">
+                <div className="text-2xl sm:text-4xl text-gray-400 dark:text-gray-500 mb-8 sm:text-center pl-6 sm:pl-0 break-words">
                   March 2023 - December 2023
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-start">
