@@ -7,6 +7,7 @@ import { Footer } from '@/components/footer'
 import { HighlightedText } from '@/components/highlighted-text'
 import { ScrollAnimation } from '@/components/scroll-animation'
 import { useLanguage } from '@/hooks/useLanguage'
+import { HoloTicket } from '@/components/holo-ticket'
 
 export default function Home() {
   const { translations } = useLanguage();
@@ -59,18 +60,8 @@ export default function Home() {
           </ScrollAnimation>
 
           <ScrollAnimation delay={0.4} direction="right">
-            <div className="relative w-full aspect-square max-w-lg mx-auto md:max-w-none">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary-developer/20 to-primary-visionary/20 rounded-full blur-3xl animate-pulse" />
-              <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800">
-                <Image
-                  src="/phil.jpeg"
-                  alt="Essohanam Tambana"
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="(max-width: 768px) 100vw, 500px"
-                />
-              </div>
+            <div className="relative w-full flex justify-center items-center">
+              <HoloTicket />
             </div>
           </ScrollAnimation>
         </div>
@@ -206,7 +197,7 @@ export default function Home() {
                 <Link 
                   href="https://github.com/GhostEsso"
                   target="_blank"
-                  className="bg-gray-900 dark:bg-white text-white dark:text-black px-4 sm:px-6 py-2 sm:py-3 rounded-lg flex items-center gap-2 hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors text-sm sm:base"
+                  className="bg-gray-900 dark:bg-white text-white dark:text-black px-4 sm:px-6 py-2 sm:py-3 rounded-lg flex items-center gap-2 hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors text-sm sm:text-base"
                 >
                   <span>{translations.home.latestCode.viewGitHub}</span>
                   <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 sm:w-5 sm:h-5">
