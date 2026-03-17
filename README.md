@@ -1,9 +1,9 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="public/visio.png" alt="logo" width="140" height="auto" />
+  <img src="public/image.png" alt="logo" width="140" height="auto" />
   <br/>
-  <h3><b>Phil Dev - Hyper-Interactive Portfolio</b></h3>
+  <h3><b>Phil Dev - Portfolio</b></h3>
 </div>
 
 # 📗 Table of Contents
@@ -73,7 +73,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://github.com/GhostEsso/phil_dev)
+- [Live Demo Link](https://phil-dev-ghostessos-projects.vercel.app)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
