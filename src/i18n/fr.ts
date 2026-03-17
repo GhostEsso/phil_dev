@@ -6,41 +6,45 @@ export const fr = {
       programmer: "Programmeur,",
       visionary: "Visionnaire."
     },
+    hero: {
+      thatsMe: "C'est moi",
+      description: "Développeur Full Stack avec plus de 2 ans d'expérience dans la création d'applications web et mobiles. Spécialisé dans les architectures modernes (React, Next.js, Ruby on Rails), je conçois des solutions numériques intuitives et performantes."
+    },
     projects: {
       title: "Projets\nPréférés",
       viewAll: "Voir tous les projets",
-      foodie: {
-        title: "Foodie",
-        description: "Foodie est une application web privée qui permet aux résidents d'un même immeuble de partager et de vendre leurs plats faits maison. Cette plateforme favorise le partage culinaire et crée des liens sociaux entre voisins. Construite avec Ruby on Rails."
+      vision: {
+        title: "Vision",
+        description: "Vision est une application web interactive permettant de visualiser et d'analyser des données géospatiales sur une carte. Elle propose des outils de dessin pour sélectionner des zones et affiche des statistiques détaillées par région."
       },
-      ahoefa: {
-        title: "Ahoefa",
-        description: "Une application web pour la réservation et la gestion de biens immobiliers. Construite avec Ruby on Rails."
+      ecommerce: {
+        title: "Boutique e-commerce",
+        description: "Application permettant aux utilisateurs d’acheter des produits en ligne."
       }
     },
     latestCode: {
       title: "Derniers\nCodes",
       viewGitHub: "Voir GitHub",
-      foodie: {
-        title: "foodie",
-        description: "Foodie est une application web privée qui permet aux résidents d'un même immeuble de partager et de vendre leurs plats faits maison. Cette plateforme favorise le partage culinaire et crée des liens sociaux entre voisins."
+      vision: {
+        title: "Vision",
+        description: "Application de visualisation de données géospatiales avec outils de dessin et statistiques en temps réel."
       },
-      ahoefa: {
-        title: "Ahoefa",
-        description: "Une application immobilière construite avec Nextjs et Tailwind CSS."
+      awesomeBooks: {
+        title: "Awesome Books",
+        description: "Une application web permettant de gérer une collection de livres avec JavaScript."
       },
       ecommerce: {
-        title: "Boutique en ligne",
-        description: "Boutique en ligne construite avec NextJs, Redux et Tailwind CSS."
+        title: "Boutique e-commerce",
+        description: "Application permettant aux utilisateurs d’acheter des produits en ligne. Construite avec NextJs, Redux et Tailwind CSS."
       }
     }
   },
   about: {
     title: 'À propos',
     subtitle: 'Développeur Full Stack',
-    description: 'Je suis un développeur passionné...',
+    description: 'Développeur Full Stack avec plus de 2 ans d\'expérience dans le développement d\'applications web, mobiles et hybrides utilisant React, Node.js et Ruby on Rails. J\'ai de l\'expérience dans la conception d\'architectures backend. J\'utilise les principales technologies de développement Frontend comme Next.js, React (avec Redux), TypeScript et JavaScript (ES6), créant des SPAs qui fonctionnent avec des APIs et suivent les meilleures pratiques. Confiant dans l\'écriture de tests unitaires avec le framework Jest. Bonne compréhension de la méthodologie Agile et capacité à collaborer efficacement en équipe.',
     currentProject: 'Je travaille actuellement sur',
-    projectName: 'Foodie',
+    projectName: 'Vision',
     skills: {
       title: 'Compétences',
       technical: {
@@ -92,29 +96,43 @@ export const fr = {
   projects: {
     title: 'Projets',
     subtitle: 'Mes derniers projets',
-    foodie: {
-      title: 'Foodie',
-      description: 'Une application web de partage de repas'
-    },
-    ahoefa: {
-      title: 'Ahoefa',
-      description: 'Une application web immobilière'
+    list: {
+      awesomeBooks: {
+        title: "Awesome Books",
+        description: "Une application web permettant de gérer une collection de livres avec JavaScript."
+      },
+      vision: {
+        title: 'Vision',
+        description: "Vision est une application web interactive permettant de visualiser et d'analyser des données géospatiales sur une carte. Elle propose des outils de dessin pour sélectionner des zones et affiche des statistiques détaillées par région."
+      },
+      mathMagician: {
+        title: "Math Magician",
+        description: "Une calculatrice interactive construite avec React, permettant d'effectuer des opérations mathématiques de base."
+      },
+      spaceTravelers: {
+        title: "Space Travelers",
+        description: "Application web permettant de réserver des voyages spatiaux et de gérer les missions spatiales."
+      },
+      ahoefa: {
+        title: 'Ahoefa',
+        description: "Une application web pour la réservation et la gestion de biens immobiliers. Construite avec Ruby on Rails."
+      },
+      ecommerce: {
+        title: "Boutique e-commerce",
+        description: "Application permettant aux utilisateurs d’acheter des produits en ligne."
+      }
     },
     viewProject: 'Voir le projet',
     viewCode: 'Voir le code',
+    github: "GitHub",
+    demo: "Live Demo",
+    admin: "Admin",
     categories: {
       all: 'Tous',
       web: 'Web',
       mobile: 'Mobile',
       design: 'Design'
     },
-    items: {
-      portfolio: {
-        title: 'Portfolio Personnel',
-        description: 'Mon portfolio personnel construit avec Next.js et TailwindCSS. Il présente mes projets et mon expérience.',
-        tech: ['Next.js', 'React', 'TailwindCSS', 'TypeScript']
-      }
-    }
   },
   experience: {
     title: 'Expériences',
@@ -143,7 +161,8 @@ export const fr = {
     about: 'À propos',
     projects: 'Projets',
     experience: 'Expériences',
-    contact: 'Contact'
+    contact: 'Contact',
+    subtitle: 'Développeur Full-Stack'
   },
   contact: {
     title: 'Contact',
@@ -156,7 +175,19 @@ export const fr = {
       send: 'Envoyer le Message',
       sending: 'Envoi en cours...',
       success: 'Message envoyé avec succès !',
-      error: 'Une erreur est survenue lors de l\'envoi du message.'
+      error: 'Une erreur est survenue lors de l\'envoi du message.',
+      placeholders: {
+        message: 'Votre message...'
+      }
+    },
+    labels: {
+      phone: 'Téléphone',
+      email: 'Email',
+      location: 'Localisation'
     }
+  },
+  footer: {
+    rights: "Tous droits réservés.",
+    developedBy: "Développé par"
   }
-} 
+}

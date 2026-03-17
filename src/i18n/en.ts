@@ -6,41 +6,45 @@ export const en = {
       programmer: "Programmer,",
       visionary: "Visionary."
     },
+    hero: {
+      thatsMe: "That's me",
+      description: "Full Stack Developer with more than 2 years of experience in creating web and mobile applications. Specializing in modern architectures (React, Next.js, Ruby on Rails), I design intuitive and high-performance digital solutions."
+    },
     projects: {
       title: "Favourite\nProjects",
       viewAll: "View all projects",
-      foodie: {
-        title: "Foodie",
-        description: "Foody is a private web application that allows residents of the same building to share and sell their home-cooked meals. This platform promotes culinary sharing and creates social ties between neighbors. Built with Ruby on Rails."
+      vision: {
+        title: "Vision",
+        description: "Map Visualization is an interactive web application that allows users to visualize and analyze geospatial data on a map. It provides drawing tools to select areas and displays statistics and charts for the data within the selected areas."
       },
-      ahoefa: {
-        title: "Ahoefa",
-        description: "A web application for booking and managing real estate properties. Built with Ruby on Rails."
+      ecommerce: {
+        title: "E-commerce Store",
+        description: "Application that allows users to buy products online."
       }
     },
     latestCode: {
       title: "Latest\nCode",
       viewGitHub: "View GitHub",
-      foodie: {
-        title: "foodie",
-        description: "Foody is a private web application that allows residents of the same building to share and sell their home-cooked meals. This platform promotes culinary sharing and creates social ties between neighbors."
+      vision: {
+        title: "Vision",
+        description: "Geospatial data visualization application with drawing tools and real-time statistics."
       },
-      ahoefa: {
-        title: "Ahoefa",
-        description: "A real estate web application built with Nextjs and Tailwind CSS."
+      awesomeBooks: {
+        title: "Awesome Books",
+        description: "A web application for managing a collection of books using JavaScript."
       },
       ecommerce: {
-        title: "Ecommerce store",
-        description: "Ecommerce store built with NextJs, Redux, and Tailwind CSS."
+        title: "E-commerce Store",
+        description: "Application that allows users to buy products online. Built with NextJs, Redux and Tailwind CSS."
       }
     }
   },
   about: {
     title: 'About',
     subtitle: 'Full Stack Developer',
-    description: 'I am a passionate developer...',
+    description: 'Full Stack Developer with more than 2 years of experience in developing web, mobile and hybrid applications using React, Node.js and Ruby on Rails. I have experience in designing backend architectures. I use leading Frontend development technologies like Next.js, React (with Redux), TypeScript and JavaScript (ES6), creating SPAs that work with APIs and follow best practices. Confident in writing unit tests with the Jest framework. Good understanding of Agile methodology and ability to collaborate effectively in a team.',
     currentProject: 'Currently working on',
-    projectName: 'Foodie',
+    projectName: 'Vision',
     skills: {
       title: 'Skills',
       technical: {
@@ -61,10 +65,10 @@ export const en = {
       soft: {
         title: 'Soft Skills',
         items: [
-          'Effective Communication',
-          'Remote Collaboration',
-          'Agile Project Management',
-          'Problem Solving',
+          'Effective communication',
+          'Remote collaboration',
+          'Agile project management',
+          'Problem solving',
           'Mentoring',
           'Teamwork',
           'Adaptability',
@@ -78,82 +82,92 @@ export const en = {
     },
     opportunities: {
       title: 'Opportunities',
-      description: 'I\'m currently looking for new opportunities. If you think I might be a good fit, check out my resume and get in touch.',
-      downloadResume: 'Download my Resume'
+      description: 'I am currently looking for new opportunities. If you think I could be a good fit, check out my CV and contact me.',
+      downloadResume: 'Download my CV'
     },
     social: {
       title: 'Social Links'
     },
     techStack: {
-      title: 'Tech Stack'
+      title: 'Technologies'
     },
-    bio: 'A Full Stack developer with over 2 years of experience in web, mobile and hybrid application development using React, Node.js and Ruby on Rails. I have experience in designing backend architectures. I use the main Frontend development technologies like Next.js, React (with Redux), TypeScript and JavaScript (ES6), creating SPAs that work with APIs and follow best practices. Confident in writing unit tests with the Jest framework. Good understanding of Agile methodology and ability to collaborate effectively in a team.'
+    bio: 'Full Stack Developer with more than 2 years of experience in developing web, mobile and hybrid applications using React, Node.js and Ruby on Rails. I have experience in designing backend architectures. I use leading Frontend development technologies like Next.js, React (with Redux), TypeScript and JavaScript (ES6), creating SPAs that work with APIs and follow best practices. Confident in writing unit tests with the Jest framework. Good understanding of Agile methodology and ability to collaborate effectively in a team.'
   },
   projects: {
     title: 'Projects',
     subtitle: 'My latest projects',
-    foodie: {
-      title: 'Foodie',
-      description: 'A meal sharing web application'
+    list: {
+      awesomeBooks: {
+        title: "Awesome Books",
+        description: "A web application to manage a book collection with JavaScript."
+      },
+      vision: {
+        title: 'Vision',
+        description: "Map Visualization is an interactive web application that allows users to visualize and analyze geospatial data on a map. It provides drawing tools to select areas and displays statistics and charts for the data within the selected areas."
+      },
+      mathMagician: {
+        title: "Math Magician",
+        description: "An interactive calculator built with React, allowing to perform basic mathematical operations."
+      },
+      spaceTravelers: {
+        title: "Space Travelers",
+        description: "Web application to book space travel and manage space missions."
+      },
+      ahoefa: {
+        title: 'Ahoefa',
+        description: "A web application for booking and managing real estate. Built with Ruby on Rails."
+      },
+      ecommerce: {
+        title: "E-commerce Store",
+        description: "Application that allows users to buy products online."
+      }
     },
-    ahoefa: {
-      title: 'Ahoefa',
-      description: 'A real estate web application'
-    },
-    viewProject: 'View Project',
-    viewCode: 'View Code',
+    viewProject: 'View project',
+    viewCode: 'View code',
+    github: "GitHub",
+    demo: "Live Demo",
+    admin: "Admin",
     categories: {
       all: 'All',
       web: 'Web',
       mobile: 'Mobile',
       design: 'Design'
-    },
-    items: {
-      foodie: {
-        title: 'Foodie',
-        description: 'A food sharing application that allows neighbors to share their meals and find dishes from their neighbors.',
-        tech: ['React', 'Node.js', 'MongoDB', 'Express']
-      },
-      portfolio: {
-        title: 'Personal Portfolio',
-        description: 'My personal portfolio built with Next.js and TailwindCSS. It showcases my projects and experience.',
-        tech: ['Next.js', 'React', 'TailwindCSS', 'TypeScript']
-      }
     }
   },
   experience: {
-    title: 'Experience',
+    title: 'Experiences',
     kaba: {
       title: 'Full Stack Developer',
       company: 'Kaba Delivery SARL',
       description: 'Development and maintenance of backend services for the Kaba Delivery platform. Design and implementation of robust APIs, database management, and system performance optimization.'
     },
     tpg: {
-      title: 'Mobile Developer Intern',
+      title: 'Mobile Developer',
       company: 'TPG - Mobile App Development Agency',
-      description: 'Internship in mobile application development at TPG, an agency specialized in designing and developing innovative mobile applications. Active participation in mobile development projects and learning industry best practices.'
+      description: 'Mobile app development at TPG, an agency specialized in the design and development of innovative mobile applications. Active participation in mobile development projects and learning industry best practices.'
     },
     foodie: {
-      title: 'Full-Stack Software Developer',
+      title: 'Full-Stack Developer',
       company: 'foodie',
-      description: 'I am a full-stack developer currently working on the foodie project. It\'s a food sharing application that allows neighbors to share their meals and find dishes from their neighbors.'
+      description: 'Full-stack developer who worked on the foodie project. It is a meal sharing application that allows neighbors to share their meals and find dishes at their neighbors.'
     },
     microverse: {
       title: 'Microverse Software Development Program',
       company: 'Remote Full Stack Web Development Program',
-      description: 'Dedicated over 1300 hours to becoming proficient in algorithms, data structures, and full-stack development, actively working on projects using Ruby, Rails, Javascript, React and Redux. Mastered remote pair-programming through GitHub, industry-standard gitflow, daily standups, fostering effective communication and collaboration with international developers.'
+      description: 'Spent 1300+ hours becoming proficient in algorithms, data structures, and full-stack development, while working on projects using Ruby, Rails, JavaScript, React and Redux. Mastered remote pair programming through GitHub, standard git workflow, daily standups, fostering effective communication and collaboration with international developers.'
     }
   },
   nav: {
     about: 'About',
     projects: 'Projects',
     experience: 'Experience',
-    contact: 'Contact'
+    contact: 'Contact',
+    subtitle: 'Full-Stack Developer'
   },
   contact: {
     title: 'Contact',
-    subtitle: 'Get in touch, let\'s talk.',
-    description: 'Fill in the details and I\'ll get back to you as soon as I can.',
+    subtitle: 'Let\'s get in touch, let\'s talk.',
+    description: 'Fill in the details and I will get back to you as soon as possible.',
     form: {
       name: 'Your Name',
       email: 'Email',
@@ -161,7 +175,19 @@ export const en = {
       send: 'Send Message',
       sending: 'Sending...',
       success: 'Message sent successfully!',
-      error: 'An error occurred while sending the message.'
+      error: 'An error occurred while sending the message.',
+      placeholders: {
+        message: 'Your message...'
+      }
+    },
+    labels: {
+      phone: 'Phone',
+      email: 'Email',
+      location: 'Location'
     }
+  },
+  footer: {
+    rights: "All Rights Reserved.",
+    developedBy: "Developed by"
   }
-} 
+}

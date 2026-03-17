@@ -2,14 +2,17 @@
 
 import Link from 'next/link'
 import { InstagramIcon, TwitterIcon, LinkedInIcon } from './social-icons'
+import { useLanguage } from '@/hooks/useLanguage'
 
 export function Footer() {
+  const { translations } = useLanguage()
+  
   return (
     <footer className="py-8 px-4 bg-white dark:bg-[#0B1121] text-gray-900 dark:text-white border-t border-gray-200 dark:border-gray-800/30 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-8 md:px-16 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-gray-500 dark:text-gray-400">© Essohanam Tambana. All Rights Reserved.</p>
+        <p className="text-gray-500 dark:text-gray-400">© Essohanam Tambana. {translations.footer.rights}</p>
         <div className="flex items-center gap-6">
-          <p className="text-gray-500 dark:text-gray-400">Developed by Essohanam Tambana</p>
+          <p className="text-gray-500 dark:text-gray-400">{translations.footer.developedBy} Essohanam Tambana</p>
           <div className="flex items-center gap-4">
             <Link 
               href="https://instagram.com"

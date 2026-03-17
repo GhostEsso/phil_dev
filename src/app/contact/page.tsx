@@ -38,7 +38,7 @@ export default function Contact() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Une erreur est survenue lors de l\'envoi du message.');
+        throw new Error(data.error || translations.contact.form.error);
       }
 
       if (data.error) {
@@ -49,7 +49,7 @@ export default function Contact() {
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       console.error('Erreur complète:', error);
-      const errorMessage = error instanceof Error ? error.message : 'Une erreur est survenue lors de l\'envoi du message.';
+      const errorMessage = error instanceof Error ? error.message : translations.contact.form.error;
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -77,7 +77,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
           {/* Contact Information */}
           <div className="space-y-6 sm:space-y-8">
-            <ScrollAnimation delay={0.2}>
+            <ScrollAnimation delay={0.2} direction="left">
               <div>
                 <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
                   {translations.contact.subtitle}
@@ -88,7 +88,7 @@ export default function Contact() {
               </div>
             </ScrollAnimation>
 
-            <ScrollAnimation delay={0.4}>
+            <ScrollAnimation delay={0.3} direction="left">
               <div className="space-y-6">
                 {/* Phone */}
                 <div className="flex items-center gap-4">
@@ -98,7 +98,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Phone</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{translations.contact.labels.phone}</p>
                     <p className="text-lg font-medium text-gray-900 dark:text-white">+228 90516979</p>
                   </div>
                 </div>
@@ -111,7 +111,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Email</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{translations.contact.labels.email}</p>
                     <p className="text-lg font-medium text-gray-900 dark:text-white">lilipitaham@gmail.com</p>
                   </div>
                 </div>
@@ -125,7 +125,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Location</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{translations.contact.labels.location}</p>
                     <p className="text-lg font-medium text-gray-900 dark:text-white">Lomé, Togo</p>
                   </div>
                 </div>
@@ -134,7 +134,7 @@ export default function Contact() {
           </div>
 
           {/* Form */}
-          <ScrollAnimation delay={0.6}>
+          <ScrollAnimation delay={0.4} direction="right">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -180,7 +180,7 @@ export default function Contact() {
                   required
                   rows={6}
                   className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-developer focus:border-transparent transition-colors resize-none"
-                  placeholder="Votre message..."
+                  placeholder={translations.contact.form.placeholders.message}
                 />
               </div>
 

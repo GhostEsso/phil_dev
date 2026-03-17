@@ -27,10 +27,12 @@ export default function Experience() {
           {/* Timeline Items Container */}
           <div className="relative space-y-12 sm:space-y-32">
             {/* Kaba Delivery */}
-            <ScrollAnimation delay={0.2}>
+            <ScrollAnimation delay={0.2} direction="right">
               <div>
-                <div className="text-2xl sm:text-4xl text-gray-400 dark:text-gray-500 mb-8 sm:text-center pl-6 sm:pl-0">
-                  2025 - Present
+                <div className="text-2xl sm:text-4xl text-gray-400 dark:text-gray-500 mb-8 flex items-center gap-2 sm:gap-0 pl-6 sm:pl-0">
+                  <span className="sm:flex-1 sm:text-right sm:pr-8">2025</span>
+                  <span className="z-10">-</span>
+                  <span className="sm:flex-1 sm:text-left sm:pl-8">Present</span>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-start">
                   <div className="hidden sm:block sm:w-1/2" />
@@ -44,11 +46,11 @@ export default function Experience() {
                     {/* Content */}
                     <div className="bg-gray-100 dark:bg-[#1a2333] rounded-lg p-6 sm:p-8">
                       <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                        Développeur Full Stack
+                        {translations.experience.kaba.title}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-500 mb-4">Kaba Delivery SARL</p>
+                      <p className="text-gray-600 dark:text-gray-500 mb-4">{translations.experience.kaba.company}</p>
                       <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm sm:text-base">
-                        Développement et maintenance des services backend pour la plateforme de livraison Kaba Delivery. Conception et implémentation d'APIs robustes, gestion de bases de données, et optimisation des performances du système.
+                        {translations.experience.kaba.description}
                       </p>
                     </div>
                   </div>
@@ -57,10 +59,12 @@ export default function Experience() {
             </ScrollAnimation>
 
             {/* TPG Stage */}
-            <ScrollAnimation delay={0.4}>
+            <ScrollAnimation delay={0.3} direction="left">
               <div>
-                <div className="text-2xl sm:text-4xl text-gray-400 dark:text-gray-500 mb-8 sm:text-center pl-6 sm:pl-0 break-words">
-                  December 2024 - March 2025
+                <div className="text-2xl sm:text-4xl text-gray-400 dark:text-gray-500 mb-8 flex items-center flex-wrap gap-2 sm:gap-0 pl-6 sm:pl-0 break-words">
+                  <span className="sm:flex-1 sm:text-right sm:pr-8">December 2024</span>
+                  <span className="z-10">-</span>
+                  <span className="sm:flex-1 sm:text-left sm:pl-8">March 2025</span>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-start">
                   <div className="hidden sm:block sm:w-1/2" />
@@ -87,10 +91,12 @@ export default function Experience() {
             </ScrollAnimation>
 
             {/* Foodie */}
-            <ScrollAnimation delay={0.6}>
+            <ScrollAnimation delay={0.3} direction="right">
               <div>
-                <div className="text-2xl sm:text-4xl text-gray-400 dark:text-gray-500 mb-8 sm:text-center pl-6 sm:pl-0 break-words">
-                  December 2023 - November 2024
+                <div className="text-2xl sm:text-4xl text-gray-400 dark:text-gray-500 mb-8 flex items-center flex-wrap gap-2 sm:gap-0 pl-6 sm:pl-0 break-words">
+                  <span className="sm:flex-1 sm:text-right sm:pr-8">December 2023</span>
+                  <span className="z-10">-</span>
+                  <span className="sm:flex-1 sm:text-left sm:pl-8">November 2024</span>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-start">
                   <div className="hidden sm:block sm:w-1/2" />
@@ -117,10 +123,12 @@ export default function Experience() {
             </ScrollAnimation>
 
             {/* Microverse */}
-            <ScrollAnimation delay={0.8}>
+            <ScrollAnimation delay={0.3} direction="left">
               <div>
-                <div className="text-2xl sm:text-4xl text-gray-400 dark:text-gray-500 mb-8 sm:text-center pl-6 sm:pl-0 break-words">
-                  March 2023 - December 2023
+                <div className="text-2xl sm:text-4xl text-gray-400 dark:text-gray-500 mb-8 flex items-center flex-wrap gap-2 sm:gap-0 pl-6 sm:pl-0 break-words">
+                  <span className="sm:flex-1 sm:text-right sm:pr-8">March 2023</span>
+                  <span className="z-10">-</span>
+                  <span className="sm:flex-1 sm:text-left sm:pl-8">December 2023</span>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-start">
                   <div className="hidden sm:block sm:w-1/2" />

@@ -17,9 +17,9 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="pt-32 sm:pt-36 md:pt-44 lg:pt-52 pb-8 sm:pb-12 md:pb-16 px-4">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
-          <ScrollAnimation>
-            <div className="flex flex-col space-y-1 sm:space-y-1">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <ScrollAnimation direction="left">
+            <div className="flex flex-col space-y-2 sm:space-y-4">
               <HighlightedText 
                 text={translations.home.roles.developer}
                 color="bg-primary-developer"
@@ -40,22 +40,36 @@ export default function Home() {
                 color="bg-primary-visionary"
                 delay={0.6}
               />
+
+              <div className="mt-8">
+                <Link 
+                  href="/about"
+                  className="group flex items-center gap-3 text-lg font-bold text-gray-900 dark:text-white hover:text-primary-developer transition-colors w-fit"
+                >
+                  <span className="relative">
+                    {translations.nav.about}
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary-developer scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                  </span>
+                  <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </ScrollAnimation>
-          <ScrollAnimation delay={0.3}>
-            <div className="block relative md:pl-6 lg:pl-12 mt-8 md:mt-0">
-              <div className="relative w-full max-w-md mx-auto md:max-w-none" style={{ aspectRatio: '3/2.8' }}>
+
+          <ScrollAnimation delay={0.4} direction="right">
+            <div className="relative w-full aspect-square max-w-lg mx-auto md:max-w-none">
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary-developer/20 to-primary-visionary/20 rounded-full blur-3xl animate-pulse" />
+              <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800">
                 <Image
                   src="/phil.jpeg"
-                  alt="That's me"
+                  alt="Essohanam Tambana"
                   fill
-                  className="object-cover grayscale rounded-lg shadow-xl"
-                  sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 600px"
+                  className="object-cover"
                   priority
+                  sizes="(max-width: 768px) 100vw, 500px"
                 />
-                <p className="absolute bottom-4 left-4 bg-black/80 px-3 py-1 rounded text-white text-sm sm:text-base">
-                  That&apos;s me
-                </p>
               </div>
             </div>
           </ScrollAnimation>
@@ -90,13 +104,13 @@ export default function Home() {
           </ScrollAnimation>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 relative z-10 mt-8 sm:mt-16 md:mt-32">
-            {/* Foodie */}
-            <ScrollAnimation delay={0.2}>
+            {/* Vision */}
+            <ScrollAnimation delay={0.2} direction="left">
               <div className="group h-full relative bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col">
                 <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                   <Image
-                    src="/foody.png"
-                    alt="Foody"
+                    src="/visio.png"
+                    alt="Vision"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 600px"
@@ -105,22 +119,22 @@ export default function Home() {
                 <div className="p-4 sm:p-6 flex flex-col flex-grow">
                   <div className="flex-grow">
                     <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-2">
-                      {translations.home.projects.foodie.title}
+                      {translations.home.projects.vision.title}
                     </h3>
                     <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-                      {translations.home.projects.foodie.description}
+                      {translations.home.projects.vision.description}
                     </p>
                   </div>
                   <div className="flex gap-3 mt-auto">
                     <Link 
-                      href="https://github.com/GhostEsso/foodie"
+                      href="https://github.com/GhostEsso/carte-visualisation"
                       target="_blank"
                       className="text-primary-developer hover:underline text-sm"
                     >
                       GitHub
                     </Link>
                     <Link 
-                      href="https://foodie-rails.onrender.com"
+                      href="https://carte-visualisation.vercel.app/"
                       target="_blank"
                       className="text-primary-developer hover:underline text-sm"
                     >
@@ -131,13 +145,13 @@ export default function Home() {
               </div>
             </ScrollAnimation>
 
-            {/* Ahoefa */}
-            <ScrollAnimation delay={0.4}>
+            {/* Ecommerce */}
+            <ScrollAnimation delay={0.4} direction="right">
               <div className="group h-full relative bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col">
                 <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                   <Image
-                    src="/ahoefa.png"
-                    alt="Ahoefa"
+                    src="/ventou.png"
+                    alt="Boutique e-commerce"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 600px"
@@ -146,22 +160,22 @@ export default function Home() {
                 <div className="p-4 sm:p-6 flex flex-col flex-grow">
                   <div className="flex-grow">
                     <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-2">
-                      {translations.home.projects.ahoefa.title}
+                      {translations.home.projects.ecommerce.title}
                     </h3>
                     <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-                      {translations.home.projects.ahoefa.description}
+                      {translations.home.projects.ecommerce.description}
                     </p>
                   </div>
                   <div className="flex gap-3 mt-auto">
                     <Link 
-                      href="https://github.com/GhostEsso/ahoefa_rails"
+                      href="https://github.com/GhostEsso/ecommerce-store"
                       target="_blank"
                       className="text-primary-developer hover:underline text-sm"
                     >
                       GitHub
                     </Link>
                     <Link 
-                      href="https://ahoefa.onrender.com"
+                      href="https://ecommerce-store-five-kohl.vercel.app/"
                       target="_blank"
                       className="text-primary-developer hover:underline text-sm"
                     >
@@ -192,7 +206,7 @@ export default function Home() {
                 <Link 
                   href="https://github.com/GhostEsso"
                   target="_blank"
-                  className="bg-gray-900 dark:bg-white text-white dark:text-black px-4 sm:px-6 py-2 sm:py-3 rounded-lg flex items-center gap-2 hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors text-sm sm:text-base"
+                  className="bg-gray-900 dark:bg-white text-white dark:text-black px-4 sm:px-6 py-2 sm:py-3 rounded-lg flex items-center gap-2 hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors text-sm sm:base"
                 >
                   <span>{translations.home.latestCode.viewGitHub}</span>
                   <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 sm:w-5 sm:h-5">
@@ -205,19 +219,19 @@ export default function Home() {
 
           {/* Grille de projets */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 relative z-10 mt-16 md:mt-32">
-            {/* Foodie */}
+            {/* Vision */}
             <ScrollAnimation delay={0.2}>
               <div className="h-full space-y-4 p-6 bg-gray-50 dark:bg-gray-800/50 rounded-lg flex flex-col">
                 <div className="flex-grow">
                   <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                    {translations.home.latestCode.foodie.title}
+                    {translations.home.latestCode.vision.title}
                   </h3>
                   <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-3">
-                    {translations.home.latestCode.foodie.description}
+                    {translations.home.latestCode.vision.description}
                   </p>
                 </div>
                 <Link 
-                  href="https://github.com/GhostEsso/foodie"
+                  href="https://github.com/GhostEsso/carte-visualisation"
                   target="_blank"
                   className="inline-flex items-center text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors text-sm sm:text-base mt-auto"
                 >
@@ -226,19 +240,19 @@ export default function Home() {
               </div>
             </ScrollAnimation>
 
-            {/* Ahoefa */}
+            {/* Awesome Books */}
             <ScrollAnimation delay={0.4}>
               <div className="h-full space-y-4 p-6 bg-gray-50 dark:bg-gray-800/50 rounded-lg flex flex-col">
                 <div className="flex-grow">
                   <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                    {translations.home.latestCode.ahoefa.title}
+                    {translations.home.latestCode.awesomeBooks.title}
                   </h3>
                   <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-3">
-                    {translations.home.latestCode.ahoefa.description}
+                    {translations.home.latestCode.awesomeBooks.description}
                   </p>
                 </div>
                 <Link 
-                  href="https://github.com/GhostEsso/ahoefa-frontend"
+                  href="https://github.com/GhostEsso/awesome-books"
                   target="_blank"
                   className="inline-flex items-center text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors text-sm sm:text-base mt-auto"
                 >

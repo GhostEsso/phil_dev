@@ -80,7 +80,7 @@ export default function About() {
 
         <div className="mt-16 sm:mt-32 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Tech Icons Grid */}
-          <ScrollAnimation delay={0.2}>
+          <ScrollAnimation delay={0.2} direction="left">
             <div className="relative grid grid-cols-3 sm:grid-cols-4 gap-6 md:gap-8 p-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg h-full overflow-hidden">
               <AnimatePresence>
                 {icons.map((icon) => (
@@ -139,7 +139,7 @@ export default function About() {
           </ScrollAnimation>
 
           {/* Content */}
-          <ScrollAnimation delay={0.4}>
+          <ScrollAnimation delay={0.4} direction="right">
             <div className="space-y-6">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
                 {translations.about.subtitle}
