@@ -176,6 +176,14 @@ export const fr = {
       sending: 'Envoi en cours...',
       success: 'Message envoyé avec succès !',
       error: 'Une erreur est survenue lors de l\'envoi du message.',
+      next: 'Continuer',
+      back: 'Précédent',
+      step1_title: 'Faisons connaissance',
+      step1_desc: 'Comment devrais-je vous appeler ?',
+      step2_title: 'Où vous recontacter ?',
+      step2_desc: 'Votre adresse email restera confidentielle.',
+      step3_title: "Dites-m'en plus",
+      step3_desc: 'Décrivez votre projet ou votre demande.',
       placeholders: {
         message: 'Votre message...'
       }

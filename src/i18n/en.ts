@@ -176,6 +176,14 @@ export const en = {
       sending: 'Sending...',
       success: 'Message sent successfully!',
       error: 'An error occurred while sending the message.',
+      next: 'Next',
+      back: 'Previous',
+      step1_title: "Let's get to know you",
+      step1_desc: "What should I call you?",
+      step2_title: "Where can I reach you?",
+      step2_desc: "Your email address remains confidential.",
+      step3_title: "Tell me more",
+      step3_desc: "Describe your project or request.",
       placeholders: {
         message: 'Your message...'
       }

@@ -1,11 +1,13 @@
 "use client"
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { useLanguage } from "@/hooks/useLanguage"
 import { ScrollAnimation } from "@/components/scroll-animation"
+import Stepper, { Step } from '@/components/stepper'
 
 export default function Contact() {
   const { translations } = useLanguage();
@@ -139,73 +141,117 @@ export default function Contact() {
             </ScrollAnimation>
           </div>
 
-          {/* Form */}
+          {/* Form with Stepper */}
           <ScrollAnimation delay={0.4} direction="right">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  {translations.contact.form.name}
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-developer focus:border-transparent transition-colors"
-                  placeholder="John Doe"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  {translations.contact.form.email}
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-developer focus:border-transparent transition-colors"
-                  placeholder="john@example.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  {translations.contact.form.message}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-developer focus:border-transparent transition-colors resize-none"
-                  placeholder={translations.contact.form.placeholders.message}
-                />
-              </div>
-
-              {submitStatus === 'success' && (
-                <p className="text-green-500">{translations.contact.form.success}</p>
-              )}
-
-              {submitStatus === 'error' && (
-                <p className="text-red-500">{translations.contact.form.error}</p>
-              )}
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full px-6 py-3 bg-primary-developer text-white font-medium rounded-lg hover:bg-primary-developer/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            <div className="bg-gray-50 dark:bg-gray-900/30 rounded-[2.5rem] p-2 border border-gray-100 dark:border-gray-800">
+              <Stepper
+                onFinalStepCompleted={() => {
+                  const formElement = document.getElementById('contact-form') as HTMLFormElement;
+                  if (formElement) formElement.requestSubmit();
+                }}
+                nextButtonText={translations.contact.form.next || "Continuer"}
+                backButtonText={translations.contact.form.back || "Précédent"}
+                completeButtonText={translations.contact.form.send || "Envoyer"}
+                stepCircleContainerClassName="!border-none !shadow-none !bg-transparent"
               >
-                {isSubmitting ? translations.contact.form.sending : translations.contact.form.send}
-              </button>
-            </form>
+                <Step>
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                       {translations.contact.form.step1_title || "Commençons par faire connaissance"}
+                    </h3>
+                    <p className="text-gray-500 dark:text-gray-400 mb-6">
+                      {translations.contact.form.step1_desc || "Comment devrais-je vous appeler ?"}
+                    </p>
+                    <div className="relative">
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-6 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-primary-developer focus:border-transparent transition-all outline-none text-lg shadow-sm"
+                        placeholder="Votre nom complet"
+                      />
+                    </div>
+                  </div>
+                </Step>
+
+                <Step>
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      {translations.contact.form.step2_title || "Où puis-je vous recontacter ?"}
+                    </h3>
+                    <p className="text-gray-500 dark:text-gray-400 mb-6">
+                      {translations.contact.form.step2_desc || "Votre adresse email reste confidentielle."}
+                    </p>
+                    <div className="relative">
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-6 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-primary-developer focus:border-transparent transition-all outline-none text-lg shadow-sm"
+                        placeholder="votre@email.com"
+                      />
+                    </div>
+                  </div>
+                </Step>
+
+                <Step>
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      {translations.contact.form.step3_title || "Dites-m'en plus"}
+                    </h3>
+                    <p className="text-gray-500 dark:text-gray-400 mb-6">
+                      {translations.contact.form.step3_desc || "Décrivez votre projet ou votre demande."}
+                    </p>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows={4}
+                      className="w-full px-6 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-primary-developer focus:border-transparent transition-all outline-none text-lg resize-none shadow-sm"
+                      placeholder={translations.contact.form.placeholders.message}
+                    />
+                  </div>
+                </Step>
+              </Stepper>
+
+              <form id="contact-form" onSubmit={handleSubmit} className="hidden">
+                 {/* Invisible real form for the actual submission logic */}
+              </form>
+
+              <div className="px-8 pb-4 text-center">
+                {submitStatus === 'success' && (
+                  <motion.p 
+                    initial={{ opacity: 0, y: 10 }} 
+                    animate={{ opacity: 1, y: 0 }} 
+                    className="text-green-500 font-medium"
+                  >
+                    ✨ {translations.contact.form.success}
+                  </motion.p>
+                )}
+                {submitStatus === 'error' && (
+                  <motion.p 
+                    initial={{ opacity: 0, y: 10 }} 
+                    animate={{ opacity: 1, y: 0 }} 
+                    className="text-red-500 font-medium"
+                  >
+                    ❌ {translations.contact.form.error}
+                  </motion.p>
+                )}
+                {isSubmitting && (
+                  <p className="text-primary-developer animate-pulse font-medium">
+                    {translations.contact.form.sending}
+                  </p>
+                )}
+              </div>
+            </div>
           </ScrollAnimation>
         </div>
       </div>
