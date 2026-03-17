@@ -139,21 +139,25 @@ export const fr = {
     kaba: {
       title: 'Développeur Full Stack',
       company: 'Kaba Delivery SARL',
+      period: '2025 - Présent',
       description: 'Développement et maintenance des services backend pour la plateforme de livraison Kaba Delivery. Conception et implémentation d\'APIs robustes, gestion de bases de données, et optimisation des performances du système.'
     },
     tpg: {
       title: 'Développeur Mobile',
       company: 'TPG - Agence de développement d\'applications mobiles',
+      period: 'Décembre 2024 - Mars 2025',
       description: 'Développement d\'applications mobiles chez TPG, une agence spécialisée dans la conception et le développement d\'applications mobiles innovantes. Participation active aux projets de développement mobile et apprentissage des meilleures pratiques du secteur.'
     },
     foodie: {
       title: 'Développeur Full-Stack',
       company: 'foodie',
+      period: 'Décembre 2023 - Novembre 2024',
       description: 'Développeur full-stack ayant travaillé sur le projet foodie. C\'est une application de partage de repas qui permet aux voisins de partager leurs repas et de trouver des plats chez leurs voisins.'
     },
     microverse: {
       title: 'Programme de Développement Logiciel Microverse',
       company: 'Programme de Développement Web Full Stack à Distance',
+      period: 'Mars 2023 - Décembre 2023',
       description: 'Plus de 1300 heures dédiées à devenir compétent en algorithmes, structures de données et développement full-stack, travaillant activement sur des projets utilisant Ruby, Rails, Javascript, React et Redux. Maîtrise de la programmation en binôme à distance via GitHub, flux de travail git standard, réunions quotidiennes, favorisant une communication et une collaboration efficaces avec des développeurs internationaux.'
     }
   },

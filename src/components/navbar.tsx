@@ -3,7 +3,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { ThemeSwitch } from './theme-switch'
 import { GitHubIcon, TwitterIcon, LinkedInIcon } from './social-icons'
 import { useLanguage } from '@/hooks/useLanguage'
@@ -12,6 +13,17 @@ export function Navbar() {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { language, translations, toggleLanguage } = useLanguage()
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMenuOpen])
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -104,32 +116,65 @@ export function Navbar() {
         </div>
 
         {/* Mobile Menu Dropdown */}
-        {isMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-[81px] bg-white dark:bg-[#0B1121] z-50 p-6 animate-in slide-in-from-top duration-300">
-            <div className="flex flex-col gap-6 text-center">
-              {[
-                { href: '/about', label: translations.nav.about },
-                { href: '/projects', label: translations.nav.projects },
-                { href: '/experience', label: translations.nav.experience },
-                { href: '/contact', label: translations.nav.contact }
-              ].map((link) => (
-                <Link 
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`text-xl font-bold ${pathname === link.href ? 'text-primary-developer' : 'text-gray-600 dark:text-gray-400'}`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <div className="pt-6 flex justify-center gap-8 border-t border-gray-100 dark:border-gray-800">
-                 <Link href="https://github.com/GhostEsso" target="_blank" className="text-gray-600 dark:text-gray-400 hover:text-primary-developer"><GitHubIcon className="w-6 h-6" /></Link>
-                 <Link href="https://x.com/TambanaEssohana" target="_blank" className="text-gray-600 dark:text-gray-400 hover:text-primary-developer"><TwitterIcon className="w-6 h-6" /></Link>
-                 <Link href="https://www.linkedin.com/in/essohanam-tambana/" target="_blank" className="text-gray-600 dark:text-gray-400 hover:text-primary-developer"><LinkedInIcon className="w-6 h-6" /></Link>
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="md:hidden fixed inset-0 top-[96px] bg-white dark:bg-[#0B1121] z-[100] px-6 py-12 flex flex-col h-[calc(100vh-96px)] overflow-y-auto"
+            >
+              <div className="flex flex-col gap-8 flex-1 justify-start">
+                {[
+                  { href: '/about', label: translations.nav.about },
+                  { href: '/projects', label: translations.nav.projects },
+                  { href: '/experience', label: translations.nav.experience },
+                  { href: '/contact', label: translations.nav.contact }
+                ].map((link, index) => (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 + 0.2 }}
+                  >
+                    <Link 
+                      href={link.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={`text-4xl sm:text-5xl font-black tracking-tight transition-all ${
+                        pathname === link.href 
+                          ? 'text-primary-developer translate-x-4' 
+                          : 'text-gray-900 dark:text-white'
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ))}
               </div>
-            </div>
-          </div>
-        )}
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="pt-12 mt-auto border-t border-gray-100 dark:border-gray-800"
+              >
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Socials</p>
+                <div className="flex items-center gap-6">
+                   <Link href="https://github.com/GhostEsso" target="_blank" className="w-12 h-12 rounded-2xl bg-gray-50 dark:bg-gray-900 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-primary-developer transition-all border border-gray-100 dark:border-gray-800">
+                     <GitHubIcon className="w-6 h-6" />
+                   </Link>
+                   <Link href="https://x.com/TambanaEssohana" target="_blank" className="w-12 h-12 rounded-2xl bg-gray-50 dark:bg-gray-900 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-primary-developer transition-all border border-gray-100 dark:border-gray-800">
+                     <TwitterIcon className="w-6 h-6" />
+                   </Link>
+                   <Link href="https://www.linkedin.com/in/essohanam-tambana/" target="_blank" className="w-12 h-12 rounded-2xl bg-gray-50 dark:bg-gray-900 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-primary-developer transition-all border border-gray-100 dark:border-gray-800">
+                     <LinkedInIcon className="w-6 h-6" />
+                   </Link>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   )
