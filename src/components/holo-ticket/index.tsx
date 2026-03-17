@@ -6,38 +6,30 @@ import { TicketFront } from './ticket-front'
 import { TicketBack } from './ticket-back'
 
 /**
- * HoloTicket Component
- * A high-fidelity, interactive 3D ticket with holographic effects.
- * Fixed TypeScript errors and enhanced design with glassmorphism and better physics.
+ * HoloTicket Component - Revised (Soft & Minimalist Edition)
+ * A gentle, elegant interaction with subtle pearlescent highlights.
  */
 export const HoloTicket = () => {
   const [isFlipped, setIsFlipped] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
-  // Motion values for tilt and mouse position
   const x = useMotionValue(0)
   const y = useMotionValue(0)
 
-  // Refined spring configuration for premium feel
-  const springConfig = { damping: 25, stiffness: 120, mass: 0.8 }
-  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [20, -20]), springConfig)
-  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-20, 20]), springConfig)
+  // Calmer spring physics for a "heavier", more luxurious feel
+  const springConfig = { damping: 30, stiffness: 80, mass: 1 }
+  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [10, -10]), springConfig)
+  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-10, 10]), springConfig)
 
-  // Reactive holographic position values
-  const glareX = useSpring(useTransform(x, [-0.5, 0.5], [0, 100]), springConfig)
-  const glareY = useSpring(useTransform(y, [-0.5, 0.5], [0, 100]), springConfig)
-
-  // Inverse values for the back side glare (fixed TS error by using typed useTransform)
-  const invGlareX = useTransform(glareX, (val: number) => 100 - val)
-  const invGlareY = useTransform(glareY, (val: number) => 100 - val)
+  // Glare position
+  const glareX = useSpring(useTransform(x, [-0.5, 0.5], [20, 80]), springConfig)
+  const glareY = useSpring(useTransform(y, [-0.5, 0.5], [20, 80]), springConfig)
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return
     const rect = containerRef.current.getBoundingClientRect()
-    const xPct = (event.clientX - rect.left) / rect.width - 0.5
-    const yPct = (event.clientY - rect.top) / rect.height - 0.5
-    x.set(xPct)
-    y.set(yPct)
+    x.set((event.clientX - rect.left) / rect.width - 0.5)
+    y.set((event.clientY - rect.top) / rect.height - 0.5)
   }
 
   const handleMouseLeave = () => {
@@ -47,108 +39,81 @@ export const HoloTicket = () => {
 
   return (
     <div 
-      className="flex items-center justify-center p-4 cursor-pointer"
-      style={{ perspective: '1500px' }}
-      onClick={() => setIsFlipped(!isFlipped)}
+      className="flex flex-col items-center justify-center p-4"
+      style={{ perspective: '2000px' }}
     >
       <motion.div
         ref={containerRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
+        onClick={() => setIsFlipped(!isFlipped)}
         style={{
           width: '320px',
-          height: '480px', // Re-aligned height
+          height: '460px',
           rotateX,
           rotateY,
           transformStyle: 'preserve-3d',
+          cursor: 'pointer'
         }}
-        animate={{
-          rotateY: isFlipped ? 180 : 0
-        }}
-        transition={{
-          type: 'spring',
-          damping: 18,
-          stiffness: 70,
-          mass: 1.2
-        }}
-        className="relative shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] rounded-2xl"
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ type: 'spring', damping: 20, stiffness: 60 }}
+        className="relative shadow-xl"
       >
-        {/* Border Glow Effect */}
-        <div className="absolute -inset-1 bg-gradient-to-r from-primary-developer via-primary-visionary to-primary-human rounded-2xl blur-md opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
+        {/* Soft Shadow Layer */}
+        <div className="absolute inset-0 bg-black/5 dark:bg-black/20 blur-2xl translate-y-4 scale-95 -z-10" />
 
         {/* Front Side */}
         <motion.div
-          className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden glass-card bg-white dark:bg-gray-900 border border-white/20 dark:border-gray-800"
+          className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm border border-gray-100 dark:border-gray-800"
           style={{ zIndex: isFlipped ? 0 : 1 }}
         >
           <TicketFront userName="Essohanam Tambana" />
           
-          {/* Enhanced Holographic Rainbow Layer */}
+          {/* Subtle Pearlescent Glare (instead of full rainbow) */}
           <motion.div 
-            className="absolute inset-0 pointer-events-none mix-blend-color-dodge z-20"
+            className="absolute inset-0 pointer-events-none mix-blend-soft-light z-20"
             style={{
-              opacity: 0.5,
               background: useTransform(
                 [glareX, glareY],
-                ([gx, gy]: any[]) => `
-                  radial-gradient(
-                    circle at ${gx}% ${gy}%, 
-                    rgba(255, 255, 255, 0.9) 0%, 
-                    rgba(255, 255, 255, 0) 50%
-                  ),
-                  linear-gradient(
-                    ${gx + gy}deg,
-                    #ff00ea22 0%,
-                    #00e1ff22 20%,
-                    #ffea0022 40%,
-                    #00ff9522 60%,
-                    #6e00ff22 80%,
-                    #ff00ea22 100%
-                  )
-                `
-              ),
-              backgroundSize: '150% 150%',
+                ([gx, gy]: any[]) => `radial-gradient(circle at ${gx}% ${gy}%, rgba(255, 255, 255, 0.4) 0%, transparent 60%)`
+              )
             }}
           />
-
-          {/* Frosted Shimmer Animation */}
-          <div className="absolute inset-0 opacity-30 pointer-events-none z-30 overflow-hidden">
-             <div className="absolute w-[300%] h-[100%] bg-gradient-to-r from-transparent via-white/40 to-transparent transform -rotate-45 -translate-x-full animate-shimmer" />
-          </div>
+          
+          {/* Very faint iridescent sweep */}
+          <motion.div 
+            className="absolute inset-0 pointer-events-none opacity-[0.05] z-10"
+            style={{
+              background: 'linear-gradient(45deg, #ff00ea, #00e1ff, #ffea00, #ff00ea)',
+              backgroundSize: '400% 400%',
+            }}
+            animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+            transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
+          />
         </motion.div>
 
         {/* Back Side */}
         <motion.div
-          className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden glass-card bg-white dark:bg-gray-900 border border-white/20 dark:border-gray-800"
-          style={{ 
-            rotateY: 180,
-            zIndex: isFlipped ? 1 : 0
-          }}
+          className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 shadow-sm text-black dark:text-white"
+          style={{ rotateY: 180, zIndex: isFlipped ? 1 : 0 }}
         >
           <TicketBack />
           
-           {/* Static Grain Texture */}
-           <div className="absolute inset-0 pointer-events-none opacity-[0.03] mix-blend-overlay"
-                style={{ backgroundImage: 'url("https://grainy-gradients.vercel.app/noise.svg")' }} />
-
-           {/* Back glare response */}
-           <motion.div 
-            className="absolute inset-0 pointer-events-none opacity-30 mix-blend-screen z-20"
+          <motion.div 
+            className="absolute inset-0 pointer-events-none mix-blend-soft-light z-20"
             style={{
               background: useTransform(
-                [invGlareX, invGlareY],
-                ([igx, igy]: any[]) => `radial-gradient(circle at ${igx}% ${igy}%, rgba(255,255,255,0.6), transparent 70%)`
+                [glareX, glareY],
+                ([gx, gy]: any[]) => `radial-gradient(circle at ${100-gx}% ${100-gy}%, rgba(255, 255, 255, 0.3) 0%, transparent 60%)`
               )
             }}
           />
         </motion.div>
       </motion.div>
       
-      {/* Help tooltip */}
-      <div className="absolute -bottom-10 flex items-center gap-3 opacity-30 text-[9px] font-bold tracking-[0.2em] text-gray-500 uppercase">
-         <span>Click to flip</span>
-         <div className="w-1 h-1 rounded-full bg-gray-400" />
-         <span>Hover to shine</span>
+      {/* Help tooltip - simplified */}
+      <div className="mt-12 text-[9px] font-bold text-gray-400 uppercase tracking-widest opacity-40">
+         Click to rotate
       </div>
 
       <style jsx global>{`
@@ -156,17 +121,6 @@ export const HoloTicket = () => {
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden;
           transform-style: preserve-3d;
-        }
-        @keyframes shimmer {
-          0% { transform: translateX(-150%) rotate(-45deg); }
-          100% { transform: translateX(150%) rotate(-45deg); }
-        }
-        .animate-shimmer {
-          animation: shimmer 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-        }
-        .glass-card {
-           backdrop-filter: blur(8px);
-           -webkit-backdrop-filter: blur(8px);
         }
       `}</style>
     </div>

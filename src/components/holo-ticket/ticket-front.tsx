@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import { Calendar, Clock, MapPin, User, Ticket as TicketIcon, Fingerprint } from 'lucide-react'
+import { Calendar, MapPin, User, ArrowUpRight } from 'lucide-react'
 
 interface TicketFrontProps {
   userName: string;
@@ -9,88 +9,62 @@ interface TicketFrontProps {
 
 export const TicketFront: React.FC<TicketFrontProps> = ({ userName }) => {
   return (
-    <div className="w-full h-full bg-white dark:bg-gray-900 flex flex-col p-6 relative overflow-hidden font-sans">
-      {/* Decorative dots on edges (Ticket notches) */}
-      <div className="absolute top-1/2 -left-4 w-8 h-8 bg-white dark:bg-[#0B1121] rounded-full -translate-y-1/2 z-10 shadow-inner" />
-      <div className="absolute top-1/2 -right-4 w-8 h-8 bg-white dark:bg-[#0B1121] rounded-full -translate-y-1/2 z-10 shadow-inner" />
-      
-      {/* Premium Gradient Background Texture */}
-      <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05] pointer-events-none"
-           style={{ backgroundSize: '20px 20px', backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)' }} />
+    <div className="w-full h-full bg-[#FAFAFA] dark:bg-[#0D121F] flex flex-col p-8 relative overflow-hidden font-sans border border-gray-100 dark:border-gray-800 rounded-2xl">
+      {/* Subtle background text for texture */}
+      <div className="absolute -right-4 top-1/4 rotate-90 opacity-[0.03] dark:opacity-[0.05] pointer-events-none select-none">
+        <span className="text-8xl font-black uppercase tracking-tighter text-gray-900 dark:text-white">
+          CREATIVE
+        </span>
+      </div>
 
-      {/* Header */}
-      <div className="flex justify-between items-start mb-10 z-10">
-        <div>
-          <div className="inline-flex items-center gap-2 px-2 py-0.5 bg-primary-developer/10 rounded text-[9px] font-black tracking-widest text-primary-developer uppercase mb-2">
-            <Fingerprint className="w-3 h-3" /> Secure Access
-          </div>
-          <h2 className="text-2xl font-black dark:text-white leading-tight">
-            DEEP<span className="text-primary-developer">MIND</span><br/>
-            CONFERENCE
-          </h2>
+      {/* Header - Minimalist */}
+      <div className="flex justify-between items-start mb-12 z-10">
+        <div className="w-10 h-10 bg-gray-900 dark:bg-white rounded-full flex items-center justify-center">
+            <span className="text-white dark:text-black font-bold text-xs">ET</span>
         </div>
-        <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
-          <TicketIcon className="w-6 h-6 text-primary-developer" />
+        <div className="text-right">
+          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">2026 Portfolio</p>
+          <p className="text-xs font-medium dark:text-gray-300">Curated Access</p>
         </div>
       </div>
 
-      {/* Main Content Area */}
-      <div className="flex-grow space-y-8 z-10">
-        {/* Attendee Info */}
-        <div className="relative">
-          <div className="absolute -left-6 top-0 bottom-0 w-1 bg-primary-developer rounded-r-full" />
-          <p className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em] mb-1">Pass Holder</p>
-          <p className="text-2xl font-black dark:text-white tracking-tight">{userName}</p>
-          <p className="text-[10px] font-bold text-primary-developer/60 mt-0.5">@GHOSTESSO · FULLSTACK ARCHITECT</p>
+      {/* Content Area */}
+      <div className="flex-grow flex flex-col justify-center z-10">
+        <div className="mb-10">
+           <p className="text-[10px] font-medium text-primary-developer uppercase tracking-[0.3em] mb-2 px-2 py-0.5 bg-primary-developer/5 w-fit rounded">Candidate</p>
+           <h2 className="text-4xl font-light tracking-tight text-gray-900 dark:text-white leading-none">
+             {userName.split(' ')[0]}<br/>
+             <span className="font-bold">{userName.split(' ')[1]}</span>
+           </h2>
         </div>
 
-        {/* Details Grid */}
-        <div className="grid grid-cols-2 gap-y-6 gap-x-4">
-          <div className="space-y-1">
-            <p className="text-[9px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest flex items-center gap-1.5">
-              <Calendar className="w-3 h-3 text-primary-developer" /> Date
-            </p>
-            <p className="text-sm font-bold dark:text-gray-200">14 JAN, 2026</p>
-          </div>
-          <div className="space-y-1 text-right md:text-left">
-            <p className="text-[9px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest flex items-center gap-1.5 justify-end md:justify-start">
-              <Clock className="w-3 h-3 text-primary-developer" /> Time
-            </p>
-            <p className="text-sm font-bold dark:text-gray-200">11:00 AM CET</p>
-          </div>
-          <div className="col-span-2 space-y-1">
-            <p className="text-[9px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest flex items-center gap-1.5">
-              <MapPin className="w-3 h-3 text-primary-developer" /> Digital Zone
-            </p>
-            <p className="text-sm font-bold dark:text-gray-200">LOME, TOGO · REMOTE NODE</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Separator Line */}
-      <div className="relative my-6 z-10">
-         <div className="border-t-2 border-dashed border-gray-100 dark:border-gray-800 w-full" />
-      </div>
-
-      {/* Footer */}
-      <div className="flex justify-between items-end z-10">
-        <div className="space-y-1">
-          <p className="text-[8px] font-black text-gray-400 tracking-tighter uppercase">Issue Auth Instance</p>
-          <p className="text-[10px] font-mono font-bold dark:text-gray-300">#PHIL-VITE-2026</p>
-        </div>
-        <div className="flex flex-col items-end">
-           <div className="w-12 h-4 bg-gray-100 dark:bg-gray-800 rounded flex items-center justify-around px-1 mb-1">
-              {[...Array(8)].map((_, i) => (
-                <div key={i} className="w-[1px] h-3 bg-gray-400" />
-              ))}
+        <div className="space-y-4">
+           <div className="flex items-center gap-4">
+              <div className="flex flex-col">
+                 <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Specialization</span>
+                 <span className="text-xs font-semibold dark:text-gray-300">Fullstack Designer</span>
+              </div>
+              <div className="w-px h-6 bg-gray-200 dark:bg-gray-800" />
+              <div className="flex flex-col">
+                 <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Based in</span>
+                 <span className="text-xs font-semibold dark:text-gray-300">Togo (Remote)</span>
+              </div>
            </div>
-           <p className="text-[8px] font-black text-primary-developer">MASTER VERIFIED</p>
         </div>
       </div>
 
-      {/* Luxury Holographic Background Blobs */}
-      <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-primary-developer/10 rounded-full blur-[80px] pointer-events-none" />
-      <div className="absolute -top-20 -left-20 w-64 h-64 bg-primary-human/10 rounded-full blur-[80px] pointer-events-none" />
+      {/* Footer - Clean Mono */}
+      <div className="mt-auto pt-6 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center z-10">
+        <div className="flex items-center gap-2">
+           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+           <span className="text-[10px] font-mono text-gray-400 uppercase tracking-tighter">Available for hire</span>
+        </div>
+        <ArrowUpRight className="w-4 h-4 text-gray-300 dark:text-gray-600" />
+      </div>
+
+      {/* Decorative grain/noise texture overlay - very subtle */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.4] mix-blend-overlay grayscale" 
+           style={{ backgroundImage: 'url("https://grainy-gradients.vercel.app/noise.svg")' }} />
     </div>
   )
 }
