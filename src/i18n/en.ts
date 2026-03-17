@@ -197,5 +197,16 @@ export const en = {
   footer: {
     rights: "All Rights Reserved.",
     developedBy: "Developed by"
+  },
+  ticket: {
+    clickToRotate: "Click to rotate",
+    profile: "Profile",
+    specialization: "Specialization",
+    fullstackDev: "Fullstack Developer",
+    basedIn: "Based in",
+    location: "Togo",
+    available: "Available for hire",
+    scanForDemo: "Scan for demo",
+    accessKey: "Access Key"
   }
 }

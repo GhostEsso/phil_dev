@@ -1,15 +1,10 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-// Vérification de la clé API avant d'initialiser Resend
-const resendApiKey = process.env.RESEND_API_KEY;
-if (!resendApiKey) {
-  console.error('La clé API Resend n\'est pas configurée dans les variables d\'environnement');
-}
-
-const resend = resendApiKey ? new Resend(resendApiKey) : null;
-
 export async function POST(request: Request) {
+  const resendApiKey = process.env.RESEND_API_KEY;
+  const resend = resendApiKey ? new Resend(resendApiKey) : null;
+
   try {
     // Vérification de la configuration de Resend
     if (!resend) {

@@ -142,115 +142,182 @@ export default function Contact() {
           </div>
 
           {/* Form with Stepper */}
-          <ScrollAnimation delay={0.4} direction="right">
-            <div className="bg-gray-50 dark:bg-gray-900/30 rounded-[2.5rem] p-2 border border-gray-100 dark:border-gray-800">
-              <Stepper
-                onFinalStepCompleted={() => {
-                  const formElement = document.getElementById('contact-form') as HTMLFormElement;
-                  if (formElement) formElement.requestSubmit();
-                }}
-                nextButtonText={translations.contact.form.next || "Continuer"}
-                backButtonText={translations.contact.form.back || "Précédent"}
-                completeButtonText={translations.contact.form.send || "Envoyer"}
-                stepCircleContainerClassName="!border-none !shadow-none !bg-transparent"
-              >
-                <Step>
-                  <div className="space-y-4">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                       {translations.contact.form.step1_title || "Commençons par faire connaissance"}
-                    </h3>
-                    <p className="text-gray-500 dark:text-gray-400 mb-6">
-                      {translations.contact.form.step1_desc || "Comment devrais-je vous appeler ?"}
-                    </p>
-                    <div className="relative">
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-6 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-primary-developer focus:border-transparent transition-all outline-none text-lg shadow-sm"
-                        placeholder="Votre nom complet"
+          <ScrollAnimation delay={0.4} direction="right" className="h-full">
+            <div className="bg-gray-50 dark:bg-gray-900/30 rounded-[2.5rem] p-2 border border-gray-100 dark:border-gray-800 h-full min-h-[500px] flex flex-col overflow-hidden">
+              <AnimatePresence mode="wait">
+                {submitStatus === 'success' ? (
+                  <motion.div 
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.95, y: 30 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                    className="flex-1 flex flex-col items-center justify-center p-8 sm:p-12 text-center"
+                  >
+                    <div className="relative mb-8">
+                      <motion.div 
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ type: "spring", stiffness: 200, damping: 15, delay: 0.2 }}
+                        className="w-24 h-24 bg-green-500/10 dark:bg-green-500/20 rounded-full flex items-center justify-center"
+                      >
+                        <motion.svg 
+                          initial={{ pathLength: 0, opacity: 0 }}
+                          animate={{ pathLength: 1, opacity: 1 }}
+                          transition={{ duration: 0.8, delay: 0.4, ease: "circOut" }}
+                          width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-green-500"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </motion.svg>
+                      </motion.div>
+                      
+                      <motion.div 
+                        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.1, 0.3] }}
+                        transition={{ duration: 3, repeat: Infinity }}
+                        className="absolute -inset-4 border border-green-500/20 rounded-full -z-10"
                       />
                     </div>
-                  </div>
-                </Step>
+                    
+                    <motion.h3 
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5 }}
+                      className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+                    >
+                      {translations.contact.form.success}
+                    </motion.h3>
+                    
+                    <motion.p 
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6 }}
+                      className="text-gray-500 dark:text-gray-400 max-w-md mx-auto text-lg leading-relaxed"
+                    >
+                      {translations.contact.description}
+                    </motion.p>
+                    
+                    <motion.button 
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.8 }}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => setSubmitStatus('idle')}
+                      className="mt-12 px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-bold rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all active:scale-95"
+                    >
+                      Envoyer un autre message
+                    </motion.button>
+                  </motion.div>
+                ) : (
+                  <motion.div 
+                    key="form"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="flex-1 flex flex-col"
+                  >
+                    <Stepper
+                      onFinalStepCompleted={() => {
+                        const formElement = document.getElementById('contact-form') as HTMLFormElement;
+                        if (formElement) formElement.requestSubmit();
+                      }}
+                      nextButtonText={translations.contact.form.next || "Continuer"}
+                      backButtonText={translations.contact.form.back || "Précédent"}
+                      completeButtonText={translations.contact.form.send || "Envoyer"}
+                      stepCircleContainerClassName="!border-none !shadow-none !bg-transparent"
+                    >
+                      <Step>
+                        <div className="space-y-4">
+                          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                             {translations.contact.form.step1_title}
+                          </h3>
+                          <p className="text-gray-500 dark:text-gray-400 mb-6">
+                            {translations.contact.form.step1_desc}
+                          </p>
+                          <div className="relative">
+                            <input
+                              type="text"
+                              id="name"
+                              name="name"
+                              value={formData.name}
+                              onChange={handleChange}
+                              required
+                              className="w-full px-6 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-primary-developer focus:border-transparent transition-all outline-none text-lg shadow-sm"
+                              placeholder="Votre nom complet"
+                            />
+                          </div>
+                        </div>
+                      </Step>
 
-                <Step>
-                  <div className="space-y-4">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                      {translations.contact.form.step2_title || "Où puis-je vous recontacter ?"}
-                    </h3>
-                    <p className="text-gray-500 dark:text-gray-400 mb-6">
-                      {translations.contact.form.step2_desc || "Votre adresse email reste confidentielle."}
-                    </p>
-                    <div className="relative">
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-6 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-primary-developer focus:border-transparent transition-all outline-none text-lg shadow-sm"
-                        placeholder="votre@email.com"
-                      />
+                      <Step>
+                        <div className="space-y-4">
+                          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                            {translations.contact.form.step2_title}
+                          </h3>
+                          <p className="text-gray-500 dark:text-gray-400 mb-6">
+                            {translations.contact.form.step2_desc}
+                          </p>
+                          <div className="relative">
+                            <input
+                              type="email"
+                              id="email"
+                              name="email"
+                              value={formData.email}
+                              onChange={handleChange}
+                              required
+                              className="w-full px-6 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-primary-developer focus:border-transparent transition-all outline-none text-lg shadow-sm"
+                              placeholder="votre@email.com"
+                            />
+                          </div>
+                        </div>
+                      </Step>
+
+                      <Step>
+                        <div className="space-y-4">
+                          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                            {translations.contact.form.step3_title}
+                          </h3>
+                          <p className="text-gray-500 dark:text-gray-400 mb-6">
+                            {translations.contact.form.step3_desc}
+                          </p>
+                          <textarea
+                            id="message"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                            rows={4}
+                            className="w-full px-6 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-primary-developer focus:border-transparent transition-all outline-none text-lg resize-none shadow-sm"
+                            placeholder={translations.contact.form.placeholders.message}
+                          />
+                        </div>
+                      </Step>
+                    </Stepper>
+
+                    <form id="contact-form" onSubmit={handleSubmit} className="hidden">
+                       {/* Invisible real form for the actual submission logic */}
+                    </form>
+
+                    <div className="px-8 pb-6 text-center mt-auto">
+                      {submitStatus === 'error' && (
+                        <motion.p 
+                          initial={{ opacity: 0, y: 10 }} 
+                          animate={{ opacity: 1, y: 0 }} 
+                          className="text-red-500 font-medium py-3 px-4 bg-red-50 dark:bg-red-500/10 rounded-xl border border-red-100 dark:border-red-500/20"
+                        >
+                          ❌ {translations.contact.form.error}
+                        </motion.p>
+                      )}
+                      {isSubmitting && (
+                        <div className="flex items-center justify-center gap-3 text-primary-developer font-medium py-3">
+                          <div className="w-5 h-5 border-2 border-primary-developer border-t-transparent rounded-full animate-spin" />
+                          {translations.contact.form.sending}
+                        </div>
+                      )}
                     </div>
-                  </div>
-                </Step>
-
-                <Step>
-                  <div className="space-y-4">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                      {translations.contact.form.step3_title || "Dites-m'en plus"}
-                    </h3>
-                    <p className="text-gray-500 dark:text-gray-400 mb-6">
-                      {translations.contact.form.step3_desc || "Décrivez votre projet ou votre demande."}
-                    </p>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={4}
-                      className="w-full px-6 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-primary-developer focus:border-transparent transition-all outline-none text-lg resize-none shadow-sm"
-                      placeholder={translations.contact.form.placeholders.message}
-                    />
-                  </div>
-                </Step>
-              </Stepper>
-
-              <form id="contact-form" onSubmit={handleSubmit} className="hidden">
-                 {/* Invisible real form for the actual submission logic */}
-              </form>
-
-              <div className="px-8 pb-4 text-center">
-                {submitStatus === 'success' && (
-                  <motion.p 
-                    initial={{ opacity: 0, y: 10 }} 
-                    animate={{ opacity: 1, y: 0 }} 
-                    className="text-green-500 font-medium"
-                  >
-                    ✨ {translations.contact.form.success}
-                  </motion.p>
+                  </motion.div>
                 )}
-                {submitStatus === 'error' && (
-                  <motion.p 
-                    initial={{ opacity: 0, y: 10 }} 
-                    animate={{ opacity: 1, y: 0 }} 
-                    className="text-red-500 font-medium"
-                  >
-                    ❌ {translations.contact.form.error}
-                  </motion.p>
-                )}
-                {isSubmitting && (
-                  <p className="text-primary-developer animate-pulse font-medium">
-                    {translations.contact.form.sending}
-                  </p>
-                )}
-              </div>
+              </AnimatePresence>
             </div>
           </ScrollAnimation>
         </div>

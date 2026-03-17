@@ -4,12 +4,15 @@ import React, { useState, useRef } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { TicketFront } from './ticket-front'
 import { TicketBack } from './ticket-back'
+import { useLanguage } from '@/hooks/useLanguage'
 
 /**
  * HoloTicket Component - Revised (Soft & Minimalist Edition)
  * A gentle, elegant interaction with subtle pearlescent highlights.
  */
 export const HoloTicket = () => {
+  const { translations } = useLanguage();
+
   const [isFlipped, setIsFlipped] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -113,7 +116,7 @@ export const HoloTicket = () => {
       
       {/* Help tooltip - simplified */}
       <div className="mt-12 text-[9px] font-bold text-gray-400 uppercase tracking-widest opacity-40">
-         Click to rotate
+         {translations.ticket.clickToRotate}
       </div>
 
       <style jsx global>{`

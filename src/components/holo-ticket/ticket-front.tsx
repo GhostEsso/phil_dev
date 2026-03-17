@@ -1,13 +1,15 @@
-"use client"
-
 import React from 'react'
-import { Calendar, MapPin, User, ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
+import { useLanguage } from '@/hooks/useLanguage'
 
 interface TicketFrontProps {
   userName: string;
 }
 
 export const TicketFront: React.FC<TicketFrontProps> = ({ userName }) => {
+  const { translations } = useLanguage();
+  const ticket = translations.ticket;
+
   return (
     <div className="w-full h-full bg-[#FAFAFA] dark:bg-[#0D121F] flex flex-col p-8 relative overflow-hidden font-sans border border-gray-100 dark:border-gray-800 rounded-2xl">
       {/* Subtle background text for texture */}
@@ -24,14 +26,15 @@ export const TicketFront: React.FC<TicketFrontProps> = ({ userName }) => {
         </div>
         <div className="text-right">
           <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">2026 Portfolio</p>
-          <p className="text-xs font-medium dark:text-gray-300">Curated Access</p>
         </div>
       </div>
 
       {/* Content Area */}
       <div className="flex-grow flex flex-col justify-center z-10">
         <div className="mb-10">
-           <p className="text-[10px] font-medium text-primary-developer uppercase tracking-[0.3em] mb-2 px-2 py-0.5 bg-primary-developer/5 w-fit rounded">Candidate</p>
+           <p className="text-[10px] font-medium text-primary-developer uppercase tracking-[0.3em] mb-2 px-2 py-0.5 bg-primary-developer/5 w-fit rounded">
+             {ticket.profile}
+           </p>
            <h2 className="text-4xl font-light tracking-tight text-gray-900 dark:text-white leading-none">
              {userName.split(' ')[0]}<br/>
              <span className="font-bold">{userName.split(' ')[1]}</span>
@@ -41,13 +44,13 @@ export const TicketFront: React.FC<TicketFrontProps> = ({ userName }) => {
         <div className="space-y-4">
            <div className="flex items-center gap-4">
               <div className="flex flex-col">
-                 <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Specialization</span>
-                 <span className="text-xs font-semibold dark:text-gray-300">Fullstack Designer</span>
+                 <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">{ticket.specialization}</span>
+                 <span className="text-xs font-semibold dark:text-gray-300">{ticket.fullstackDev}</span>
               </div>
               <div className="w-px h-6 bg-gray-200 dark:bg-gray-800" />
               <div className="flex flex-col">
-                 <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Based in</span>
-                 <span className="text-xs font-semibold dark:text-gray-300">Togo (Remote)</span>
+                 <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">{ticket.basedIn}</span>
+                 <span className="text-xs font-semibold dark:text-gray-300">{ticket.location}</span>
               </div>
            </div>
         </div>
@@ -57,7 +60,7 @@ export const TicketFront: React.FC<TicketFrontProps> = ({ userName }) => {
       <div className="mt-auto pt-6 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center z-10">
         <div className="flex items-center gap-2">
            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-           <span className="text-[10px] font-mono text-gray-400 uppercase tracking-tighter">Available for hire</span>
+           <span className="text-[10px] font-mono text-gray-400 uppercase tracking-tighter">{ticket.available}</span>
         </div>
         <ArrowUpRight className="w-4 h-4 text-gray-300 dark:text-gray-600" />
       </div>
