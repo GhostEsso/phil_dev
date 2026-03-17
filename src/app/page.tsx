@@ -42,20 +42,7 @@ export default function Home() {
                 delay={0.6}
               />
 
-              <div className="mt-8">
-                <Link 
-                  href="/about"
-                  className="group flex items-center gap-3 text-lg font-bold text-gray-900 dark:text-white hover:text-primary-developer transition-colors w-fit"
-                >
-                  <span className="relative">
-                    {translations.nav.about}
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary-developer scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-                  </span>
-                  <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </div>
+
             </div>
           </ScrollAnimation>
 
