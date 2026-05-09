@@ -81,9 +81,43 @@ export default function Home() {
             </div>
           </ScrollAnimation>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 relative z-10 mt-8 sm:mt-16 md:mt-32">
-            {/* Vision */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 relative z-10 mt-8 sm:mt-16 md:mt-32">
+            {/* Kaba Fulfillment */}
             <ScrollAnimation delay={0.2} direction="left">
+              <div className="group h-full relative bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col">
+                <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
+                  <Image
+                    src="/kaba-fulfillment.png"
+                    alt="Kaba Fulfillment"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 600px"
+                  />
+                </div>
+                <div className="p-4 sm:p-6 flex flex-col flex-grow">
+                  <div className="flex-grow">
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-2">
+                      {translations.home.projects.kabaFulfillment.title}
+                    </h3>
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                      {translations.home.projects.kabaFulfillment.description}
+                    </p>
+                  </div>
+                  <div className="flex gap-3 mt-auto">
+                    <Link
+                      href="https://kabafulfillment.com/"
+                      target="_blank"
+                      className="text-primary-developer hover:underline text-sm"
+                    >
+                      Live Demo
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </ScrollAnimation>
+
+            {/* Vision */}
+            <ScrollAnimation delay={0.4} direction="up">
               <div className="group h-full relative bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col">
                 <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                   <Image
@@ -104,14 +138,14 @@ export default function Home() {
                     </p>
                   </div>
                   <div className="flex gap-3 mt-auto">
-                    <Link 
+                    <Link
                       href="https://github.com/GhostEsso/carte-visualisation"
                       target="_blank"
                       className="text-primary-developer hover:underline text-sm"
                     >
                       GitHub
                     </Link>
-                    <Link 
+                    <Link
                       href="https://carte-visualisation.vercel.app/"
                       target="_blank"
                       className="text-primary-developer hover:underline text-sm"
@@ -124,7 +158,7 @@ export default function Home() {
             </ScrollAnimation>
 
             {/* Ecommerce */}
-            <ScrollAnimation delay={0.4} direction="right">
+            <ScrollAnimation delay={0.6} direction="right">
               <div className="group h-full relative bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col">
                 <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                   <Image
@@ -145,14 +179,14 @@ export default function Home() {
                     </p>
                   </div>
                   <div className="flex gap-3 mt-auto">
-                    <Link 
+                    <Link
                       href="https://github.com/GhostEsso/ecommerce-store"
                       target="_blank"
                       className="text-primary-developer hover:underline text-sm"
                     >
                       GitHub
                     </Link>
-                    <Link 
+                    <Link
                       href="https://ecommerce-store-five-kohl.vercel.app/"
                       target="_blank"
                       className="text-primary-developer hover:underline text-sm"

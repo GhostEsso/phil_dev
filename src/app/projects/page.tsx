@@ -12,6 +12,14 @@ export default function Projects() {
 
   const projects = [
     {
+      id: "kabaFulfillment",
+      title: translations.projects.list.kabaFulfillment.title,
+      description: translations.projects.list.kabaFulfillment.description,
+      image: "/kaba-fulfillment.png",
+      tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+      demo: "https://kabafulfillment.com/"
+    },
+    {
       id: "awesomeBooks",
       title: translations.projects.list.awesomeBooks.title,
       description: translations.projects.list.awesomeBooks.description,
@@ -110,14 +118,16 @@ export default function Projects() {
                     </div>
                   </div>
                   <div className="flex gap-3 mt-auto">
-                    <Link 
-                      href={project.github}
-                      target="_blank"
-                      className="text-primary-developer hover:underline text-sm"
-                    >
-                      {translations.projects.github}
-                    </Link>
-                    <Link 
+                    {project.github && (
+                      <Link
+                        href={project.github}
+                        target="_blank"
+                        className="text-primary-developer hover:underline text-sm"
+                      >
+                        {translations.projects.github}
+                      </Link>
+                    )}
+                    <Link
                       href={project.demo}
                       target="_blank"
                       className="text-primary-developer hover:underline text-sm"

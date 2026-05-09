@@ -13,6 +13,10 @@ export const en = {
     projects: {
       title: "Favourite\nProjects",
       viewAll: "View all projects",
+      kabaFulfillment: {
+        title: "Kaba Fulfillment",
+        description: "Landing page for Kaba Delivery SARL - storage solutions, order management and deliveries for e-merchants and businesses in the UEMOA zone."
+      },
       vision: {
         title: "Vision",
         description: "Map Visualization is an interactive web application that allows users to visualize and analyze geospatial data on a map. It provides drawing tools to select areas and displays statistics and charts for the data within the selected areas."
@@ -120,6 +124,10 @@ export const en = {
       ecommerce: {
         title: "E-commerce Store",
         description: "Application that allows users to buy products online."
+      },
+      kabaFulfillment: {
+        title: "Kaba Fulfillment",
+        description: "Landing page for Kaba Delivery SARL — storage solutions, order management and deliveries for e-merchants and businesses in the UEMOA zone. Built with Next.js and Tailwind CSS."
       }
     },
     viewProject: 'View project',

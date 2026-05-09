@@ -13,13 +13,17 @@ export const fr = {
     projects: {
       title: "Projets\nPréférés",
       viewAll: "Voir tous les projets",
+      kabaFulfillment: {
+        title: "Kaba Fulfillment",
+        description: "Landing page pour Kaba Delivery SARL - solutions de stockage, gestion de commandes et livraisons pour e-commercants et entreprises dans la zone UEMOA."
+      },
       vision: {
         title: "Vision",
         description: "Vision est une application web interactive permettant de visualiser et d'analyser des données géospatiales sur une carte. Elle propose des outils de dessin pour sélectionner des zones et affiche des statistiques détaillées par région."
       },
       ecommerce: {
         title: "Boutique e-commerce",
-        description: "Application permettant aux utilisateurs d’acheter des produits en ligne."
+        description: "Application permettant aux utilisateurs d'acheter des produits en ligne."
       }
     },
     latestCode: {
@@ -35,7 +39,7 @@ export const fr = {
       },
       ecommerce: {
         title: "Boutique e-commerce",
-        description: "Application permettant aux utilisateurs d’acheter des produits en ligne. Construite avec NextJs, Redux et Tailwind CSS."
+        description: "Application permettant aux utilisateurs d'acheter des produits en ligne. Construite avec NextJs, Redux et Tailwind CSS."
       }
     }
   },
@@ -119,7 +123,11 @@ export const fr = {
       },
       ecommerce: {
         title: "Boutique e-commerce",
-        description: "Application permettant aux utilisateurs d’acheter des produits en ligne."
+        description: "Application permettant aux utilisateurs d'acheter des produits en ligne."
+      },
+      kabaFulfillment: {
+        title: "Kaba Fulfillment",
+        description: "Landing page pour Kaba Delivery SARL — solutions de stockage, gestion de commandes et livraisons pour e-commercants et entreprises dans la zone UEMOA. Concue avec Next.js et Tailwind CSS."
       }
     },
     viewProject: 'Voir le projet',
